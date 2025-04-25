@@ -44,7 +44,7 @@ export default function EstatePlanningPage() {
               <div>
                 <h3 className="font-medium">Expert Guidance</h3>
                 <p className="text-sm text-charcoal/80">
-                  We'll guide you through the notarization process, ensuring all requirements are met.
+                  We&apos;ll guide you through the notarization process, ensuring all requirements are met.
                 </p>
               </div>
             </div>
@@ -83,4 +83,13 @@ export default function EstatePlanningPage() {
           <div className="absolute -bottom-6 -right-6 w-24 h-24 rounded-full bg-sunrise-gold/10 animate-float"></div>
           <div className="relative rounded-2xl overflow-hidden shadow-xl">
             <img
-              src="https://kagi.com/proxy/estate-planning-documents-signing-with-notary-public-1024x683.jpg?c=Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-Yx-\
+              src="/estate-signing-notary.png"
+              alt="Estate planning document signing"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </motion.div>
+      </div>
+    </div>
+  )
+}
