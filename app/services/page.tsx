@@ -1,195 +1,609 @@
-import { Check } from "lucide-react"
+import { Check, Clock, DollarSign, MapPin, Globe, Car, Briefcase, FileText, Users, Home } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 export default function ServicesPage() {
   return (
     <div className="container px-4 py-12 md:py-16">
       <div className="text-center space-y-4 mb-12">
-        <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Our Notary Services</h1>
-        <p className="text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed max-w-[700px] mx-auto">
-          We provide comprehensive notary services for all your real estate needs in St. Petersburg, Florida.
+        <h1 className="text-3xl font-bold tracking-tighter font-heading text-coastal-blue sm:text-4xl md:text-5xl">
+          Our Notary Services
+        </h1>
+        <p className="text-charcoal md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed max-w-[700px] mx-auto">
+          We provide comprehensive notary and related services throughout Florida.
         </p>
       </div>
 
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        <Card>
-          <CardHeader>
-            <CardTitle>Real Estate Closings</CardTitle>
-            <CardDescription>Complete notarization for real estate transactions</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <ul className="space-y-2">
-              <li className="flex items-start gap-2">
-                <Check className="h-5 w-5 text-sky-600 mt-0.5" />
-                <span>Mortgage documents</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Check className="h-5 w-5 text-sky-600 mt-0.5" />
-                <span>Deeds and title transfers</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Check className="h-5 w-5 text-sky-600 mt-0.5" />
-                <span>Closing documents</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Check className="h-5 w-5 text-sky-600 mt-0.5" />
-                <span>Refinancing paperwork</span>
-              </li>
-            </ul>
-          </CardContent>
-        </Card>
+      <Tabs defaultValue="all" className="max-w-4xl mx-auto mb-12">
+        <TabsList className="grid w-full grid-cols-7 mb-8">
+          <TabsTrigger value="all">All</TabsTrigger>
+          <TabsTrigger value="notary">Notary</TabsTrigger>
+          <TabsTrigger value="real-estate">Real Estate</TabsTrigger>
+          <TabsTrigger value="estate-planning">Estate Planning</TabsTrigger>
+          <TabsTrigger value="vehicle">Vehicle</TabsTrigger>
+          <TabsTrigger value="business">Business</TabsTrigger>
+          <TabsTrigger value="other">Other</TabsTrigger>
+        </TabsList>
 
-        <Card>
-          <CardHeader>
-            <CardTitle>Loan Signings</CardTitle>
-            <CardDescription>Expert notarization for loan documents</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <ul className="space-y-2">
-              <li className="flex items-start gap-2">
-                <Check className="h-5 w-5 text-sky-600 mt-0.5" />
-                <span>Loan agreements</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Check className="h-5 w-5 text-sky-600 mt-0.5" />
-                <span>Promissory notes</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Check className="h-5 w-5 text-sky-600 mt-0.5" />
-                <span>Security agreements</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Check className="h-5 w-5 text-sky-600 mt-0.5" />
-                <span>Loan modifications</span>
-              </li>
-            </ul>
-          </CardContent>
-        </Card>
+        <TabsContent value="all">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {/* Notary Services */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="font-heading">Notary Services</CardTitle>
+                <CardDescription>Professional notarization for all document types</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>General document notarization</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Mobile notary services covering all 67 Florida counties</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Witnesses for document signing</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Extended hours notary services (with convenience fee)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>LegalZoom document notarization</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
 
-        <Card>
-          <CardHeader>
-            <CardTitle>Power of Attorney</CardTitle>
-            <CardDescription>Notarization of power of attorney documents</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <ul className="space-y-2">
-              <li className="flex items-start gap-2">
-                <Check className="h-5 w-5 text-sky-600 mt-0.5" />
-                <span>General power of attorney</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Check className="h-5 w-5 text-sky-600 mt-0.5" />
-                <span>Limited power of attorney</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Check className="h-5 w-5 text-sky-600 mt-0.5" />
-                <span>Durable power of attorney</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Check className="h-5 w-5 text-sky-600 mt-0.5" />
-                <span>Healthcare power of attorney</span>
-              </li>
-            </ul>
-          </CardContent>
-        </Card>
+            {/* Real Estate Services */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="font-heading">Real Estate Services</CardTitle>
+                <CardDescription>Expert notarization for real estate transactions</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Real estate document notarization and preparation</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Seller documents</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>New home purchase documents</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Loan signing agent services (NNA and LSS Certified)</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
 
-        <Card>
-          <CardHeader>
-            <CardTitle>Affidavits & Statements</CardTitle>
-            <CardDescription>Notarization of sworn statements</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <ul className="space-y-2">
-              <li className="flex items-start gap-2">
-                <Check className="h-5 w-5 text-sky-600 mt-0.5" />
-                <span>Affidavits</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Check className="h-5 w-5 text-sky-600 mt-0.5" />
-                <span>Sworn statements</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Check className="h-5 w-5 text-sky-600 mt-0.5" />
-                <span>Declarations</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Check className="h-5 w-5 text-sky-600 mt-0.5" />
-                <span>Certifications</span>
-              </li>
-            </ul>
-          </CardContent>
-        </Card>
+            {/* Estate Planning */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="font-heading">Estate Planning</CardTitle>
+                <CardDescription>Secure your legacy with proper documentation</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Last Will and Testament ($150)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Living Will/Advance Healthcare Directive ($65)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Durable Power of Attorney ($125)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Full estate planning packages</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Testamentos, Directivas, Carta de Poder (Spanish services)</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
 
-        <Card>
-          <CardHeader>
-            <CardTitle>Estate Planning</CardTitle>
-            <CardDescription>Notarization for estate planning documents</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <ul className="space-y-2">
-              <li className="flex items-start gap-2">
-                <Check className="h-5 w-5 text-sky-600 mt-0.5" />
-                <span>Wills</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Check className="h-5 w-5 text-sky-600 mt-0.5" />
-                <span>Living trusts</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Check className="h-5 w-5 text-sky-600 mt-0.5" />
-                <span>Healthcare directives</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Check className="h-5 w-5 text-sky-600 mt-0.5" />
-                <span>Living wills</span>
-              </li>
-            </ul>
-          </CardContent>
-        </Card>
+            {/* Vehicle Documentation */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="font-heading">Vehicle Documentation</CardTitle>
+                <CardDescription>Vehicle-related verification and documentation</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>VIN verification</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Odometer verification</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Out-of-state vehicle registration assistance</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Trailer, RV, and motorcycle documentation</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
 
-        <Card>
-          <CardHeader>
-            <CardTitle>Other Documents</CardTitle>
-            <CardDescription>Notarization for various other documents</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <ul className="space-y-2">
-              <li className="flex items-start gap-2">
-                <Check className="h-5 w-5 text-sky-600 mt-0.5" />
-                <span>Consent forms</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Check className="h-5 w-5 text-sky-600 mt-0.5" />
-                <span>Authorization letters</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Check className="h-5 w-5 text-sky-600 mt-0.5" />
-                <span>Vehicle transfers</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Check className="h-5 w-5 text-sky-600 mt-0.5" />
-                <span>Business documents</span>
-              </li>
+            {/* Business & Employment Services */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="font-heading">Business & Employment</CardTitle>
+                <CardDescription>Services for businesses and employers</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>I-9 Form verification (Employment Eligibility Verification)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Authorized representative services for remote employee verification</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Document Services */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="font-heading">Document Services</CardTitle>
+                <CardDescription>Comprehensive document handling solutions</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>International document shipping (over 200 countries)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Legal document preparation with state compliance</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Translation services (English-Spanish)</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Other Services */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="font-heading">Other Services</CardTitle>
+                <CardDescription>Additional services to meet your needs</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Bilingual services (English and Spanish)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Local business recommendations (Shop Local - Tampa Bay)</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </TabsContent>
+
+        <TabsContent value="notary">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <Card>
+              <CardHeader>
+                <CardTitle className="font-heading">Notary Services</CardTitle>
+                <CardDescription>Professional notarization for all document types</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>General document notarization</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Mobile notary services covering all 67 Florida counties</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Witnesses for document signing</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Extended hours notary services (with convenience fee)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>LegalZoom document notarization</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </TabsContent>
+
+        <TabsContent value="real-estate">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <Card>
+              <CardHeader>
+                <CardTitle className="font-heading">Real Estate Services</CardTitle>
+                <CardDescription>Expert notarization for real estate transactions</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Real estate document notarization and preparation</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Seller documents</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>New home purchase documents</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Loan signing agent services (NNA and LSS Certified)</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </TabsContent>
+
+        <TabsContent value="estate-planning">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <Card>
+              <CardHeader>
+                <CardTitle className="font-heading">Estate Planning</CardTitle>
+                <CardDescription>Secure your legacy with proper documentation</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Last Will and Testament ($150)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Living Will/Advance Healthcare Directive ($65)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Durable Power of Attorney ($125)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Full estate planning packages</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Testamentos, Directivas, Carta de Poder (Spanish services)</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </TabsContent>
+
+        <TabsContent value="vehicle">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <Card>
+              <CardHeader>
+                <CardTitle className="font-heading">Vehicle Documentation</CardTitle>
+                <CardDescription>Vehicle-related verification and documentation</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>VIN verification</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Odometer verification</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Out-of-state vehicle registration assistance</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Trailer, RV, and motorcycle documentation</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </TabsContent>
+
+        <TabsContent value="business">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <Card>
+              <CardHeader>
+                <CardTitle className="font-heading">Business & Employment</CardTitle>
+                <CardDescription>Services for businesses and employers</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>I-9 Form verification (Employment Eligibility Verification)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Authorized representative services for remote employee verification</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="font-heading">Document Services</CardTitle>
+                <CardDescription>Comprehensive document handling solutions</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>International document shipping (over 200 countries)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Legal document preparation with state compliance</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Translation services (English-Spanish)</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </TabsContent>
+
+        <TabsContent value="other">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <Card>
+              <CardHeader>
+                <CardTitle className="font-heading">Other Services</CardTitle>
+                <CardDescription>Additional services to meet your needs</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Bilingual services (English and Spanish)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Local business recommendations (Shop Local - Tampa Bay)</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="font-heading">Document Services</CardTitle>
+                <CardDescription>Comprehensive document handling solutions</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>International document shipping (over 200 countries)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Legal document preparation with state compliance</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Translation services (English-Spanish)</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </TabsContent>
+      </Tabs>
+
+      <div className="max-w-4xl mx-auto">
+        <div className="bg-coastal-blue/5 rounded-lg p-6 md:p-8 mb-12">
+          <h2 className="text-2xl font-bold font-heading text-coastal-blue mb-4">Our Service Categories</h2>
+          <div className="grid gap-6 md:grid-cols-3 lg:grid-cols-4">
+            <div className="bg-white p-4 rounded-lg shadow-sm border text-center">
+              <div className="flex justify-center mb-3">
+                <div className="p-2 rounded-full bg-coastal-blue/10">
+                  <FileText className="h-5 w-5 text-coastal-blue" />
+                </div>
+              </div>
+              <h3 className="font-medium font-heading">Notary Services</h3>
+              <p className="text-xs text-charcoal mt-1">Professional notarization for all document types</p>
+            </div>
+
+            <div className="bg-white p-4 rounded-lg shadow-sm border text-center">
+              <div className="flex justify-center mb-3">
+                <div className="p-2 rounded-full bg-coastal-blue/10">
+                  <Home className="h-5 w-5 text-coastal-blue" />
+                </div>
+              </div>
+              <h3 className="font-medium font-heading">Real Estate</h3>
+              <p className="text-xs text-charcoal mt-1">Expert notarization for real estate transactions</p>
+            </div>
+
+            <div className="bg-white p-4 rounded-lg shadow-sm border text-center">
+              <div className="flex justify-center mb-3">
+                <div className="p-2 rounded-full bg-coastal-blue/10">
+                  <FileText className="h-5 w-5 text-coastal-blue" />
+                </div>
+              </div>
+              <h3 className="font-medium font-heading">Estate Planning</h3>
+              <p className="text-xs text-charcoal mt-1">Secure your legacy with proper documentation</p>
+            </div>
+
+            <div className="bg-white p-4 rounded-lg shadow-sm border text-center">
+              <div className="flex justify-center mb-3">
+                <div className="p-2 rounded-full bg-coastal-blue/10">
+                  <Car className="h-5 w-5 text-coastal-blue" />
+                </div>
+              </div>
+              <h3 className="font-medium font-heading">Vehicle Documentation</h3>
+              <p className="text-xs text-charcoal mt-1">Vehicle-related verification and documentation</p>
+            </div>
+
+            <div className="bg-white p-4 rounded-lg shadow-sm border text-center">
+              <div className="flex justify-center mb-3">
+                <div className="p-2 rounded-full bg-coastal-blue/10">
+                  <Briefcase className="h-5 w-5 text-coastal-blue" />
+                </div>
+              </div>
+              <h3 className="font-medium font-heading">Business Services</h3>
+              <p className="text-xs text-charcoal mt-1">Services for businesses and employers</p>
+            </div>
+
+            <div className="bg-white p-4 rounded-lg shadow-sm border text-center">
+              <div className="flex justify-center mb-3">
+                <div className="p-2 rounded-full bg-coastal-blue/10">
+                  <Globe className="h-5 w-5 text-coastal-blue" />
+                </div>
+              </div>
+              <h3 className="font-medium font-heading">Document Services</h3>
+              <p className="text-xs text-charcoal mt-1">Comprehensive document handling solutions</p>
+            </div>
+
+            <div className="bg-white p-4 rounded-lg shadow-sm border text-center">
+              <div className="flex justify-center mb-3">
+                <div className="p-2 rounded-full bg-coastal-blue/10">
+                  <Users className="h-5 w-5 text-coastal-blue" />
+                </div>
+              </div>
+              <h3 className="font-medium font-heading">Bilingual Services</h3>
+              <p className="text-xs text-charcoal mt-1">Services in English and Spanish</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid gap-8 md:grid-cols-3 mb-12">
+          <div className="bg-white p-6 rounded-lg shadow-sm border">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="p-2 rounded-full bg-coastal-blue/10">
+                <Clock className="h-5 w-5 text-coastal-blue" />
+              </div>
+              <h3 className="font-medium font-heading">Availability</h3>
+            </div>
+            <p className="text-sm text-charcoal mb-2">We offer flexible scheduling to accommodate your needs:</p>
+            <ul className="text-sm text-charcoal space-y-1">
+              <li>• Monday - Friday: 9AM - 7PM</li>
+              <li>• Saturday: 10AM - 5PM</li>
+              <li>• Sunday: By appointment</li>
+              <li>• Extended hours available (fee applies)</li>
             </ul>
-          </CardContent>
-        </Card>
+          </div>
+
+          <div className="bg-white p-6 rounded-lg shadow-sm border">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="p-2 rounded-full bg-coastal-blue/10">
+                <MapPin className="h-5 w-5 text-coastal-blue" />
+              </div>
+              <h3 className="font-medium font-heading">Service Area</h3>
+            </div>
+            <p className="text-sm text-charcoal mb-2">We provide mobile notary services throughout:</p>
+            <ul className="text-sm text-charcoal space-y-1">
+              <li>• All 67 Florida counties</li>
+              <li>• Tampa Bay area</li>
+              <li>• St. Petersburg</li>
+              <li>• Clearwater and surrounding areas</li>
+            </ul>
+          </div>
+
+          <div className="bg-white p-6 rounded-lg shadow-sm border">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="p-2 rounded-full bg-coastal-blue/10">
+                <DollarSign className="h-5 w-5 text-coastal-blue" />
+              </div>
+              <h3 className="font-medium font-heading">Pricing</h3>
+            </div>
+            <p className="text-sm text-charcoal mb-2">Our competitive pricing structure:</p>
+            <ul className="text-sm text-charcoal space-y-1">
+              <li>• Last Will and Testament: $150</li>
+              <li>• Living Will/Healthcare Directive: $65</li>
+              <li>• Durable Power of Attorney: $125</li>
+              <li>• Standard notarization: $10/signature</li>
+              <li>• Travel fees vary by location</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="text-center">
+          <h2 className="text-2xl font-bold font-heading text-coastal-blue mb-4">
+            Ready to Schedule a Notary Service?
+          </h2>
+          <p className="text-charcoal max-w-[700px] mx-auto mb-6">
+            Book an appointment today and experience our professional, convenient mobile notary services.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button asChild size="lg" className="bg-coastal-blue hover:bg-coastal-light">
+              <Link href="/schedule">Book an Appointment</Link>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="border-coastal-blue text-coastal-blue hover:bg-coastal-blue/5"
+            >
+              <Link href="/contact">Contact Us</Link>
+            </Button>
+          </div>
+        </div>
       </div>
 
       <div className="mt-16 text-center space-y-4">
-        <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl">Service Areas</h2>
-        <p className="text-gray-500 md:text-lg/relaxed max-w-[700px] mx-auto">
-          We provide mobile notary services throughout St. Petersburg and surrounding areas in Pinellas County,
-          including:
+        <h2 className="text-2xl font-bold tracking-tighter font-heading text-coastal-blue">Service Areas</h2>
+        <p className="text-charcoal md:text-lg/relaxed max-w-[700px] mx-auto">
+          We provide mobile notary services throughout all 67 Florida counties, including:
         </p>
         <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-3xl mx-auto mt-6">
-          <div className="bg-sky-50 p-3 rounded-md">St. Petersburg</div>
-          <div className="bg-sky-50 p-3 rounded-md">Clearwater</div>
-          <div className="bg-sky-50 p-3 rounded-md">Largo</div>
-          <div className="bg-sky-50 p-3 rounded-md">Pinellas Park</div>
-          <div className="bg-sky-50 p-3 rounded-md">Seminole</div>
-          <div className="bg-sky-50 p-3 rounded-md">Gulfport</div>
-          <div className="bg-sky-50 p-3 rounded-md">Treasure Island</div>
-          <div className="bg-sky-50 p-3 rounded-md">Madeira Beach</div>
+          <div className="bg-coastal-blue/5 p-3 rounded-md">Tampa</div>
+          <div className="bg-coastal-blue/5 p-3 rounded-md">St. Petersburg</div>
+          <div className="bg-coastal-blue/5 p-3 rounded-md">Clearwater</div>
+          <div className="bg-coastal-blue/5 p-3 rounded-md">Largo</div>
+          <div className="bg-coastal-blue/5 p-3 rounded-md">Pinellas Park</div>
+          <div className="bg-coastal-blue/5 p-3 rounded-md">Seminole</div>
+          <div className="bg-coastal-blue/5 p-3 rounded-md">Palm Harbor</div>
+          <div className="bg-coastal-blue/5 p-3 rounded-md">Wesley Chapel</div>
         </div>
       </div>
     </div>

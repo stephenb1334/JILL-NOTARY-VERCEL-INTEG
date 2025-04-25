@@ -1,34 +1,24 @@
 import type React from "react"
-import "@/app/globals.css"
-import { Raleway, Source_Sans_3, Playfair_Display } from "next/font/google"
+import type { Metadata } from "next"
+import { Manrope, Mulish } from "next/font/google"
+import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
-import Header from "@/components/header"
-import Footer from "@/components/footer"
+import { Header } from "@/components/header"
+import { Footer } from "@/components/footer"
 
-const raleway = Raleway({
+const manrope = Manrope({
   subsets: ["latin"],
-  variable: "--font-raleway",
-  weight: ["300", "400", "500", "600", "700"],
-  display: "swap",
+  variable: "--font-sans",
 })
 
-const sourceSans = Source_Sans_3({
+const mulish = Mulish({
   subsets: ["latin"],
-  variable: "--font-source-sans",
-  weight: ["300", "400", "600"],
-  display: "swap",
+  variable: "--font-heading",
 })
 
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-playfair",
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-})
-
-export const metadata = {
-  title: "Sunrise Notary Solutions | Tampa Bay Mobile Notary Services",
-  description: "Professional mobile notary services for real estate transactions in Tampa Bay, Florida.",
+export const metadata: Metadata = {
+  title: "West Coast Notaries | Professional Mobile Notary Services",
+  description: "Expert mobile notary services specializing in loan signings and estate planning throughout Florida.",
     generator: 'v0.dev'
 }
 
@@ -38,12 +28,14 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={`${raleway.variable} ${sourceSans.variable} ${playfair.variable} font-sans`}>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
-          <Header />
-          <main>{children}</main>
-          <Footer />
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${manrope.variable} ${mulish.variable} font-sans antialiased`}>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+          <div className="relative flex min-h-screen flex-col">
+            <Header />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>

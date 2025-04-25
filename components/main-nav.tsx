@@ -20,13 +20,13 @@ export function MainNav() {
         <div className="flex items-center gap-2">
           <Link href="/" className="font-accent font-bold text-xl flex items-center">
             <img
-              src="https://kagi.com/proxy/4.png?c=V9SL_Pk4NSRIavWtLPKxEU60MIizL_oxnkl1ibD4_WA6gXrEUA21k8Q8m7S8LnqHwoyYVuva8Bgev8pLDaGFQw%3D%3D"
-              alt="Sunrise Notary Logo"
-              className="h-8 w-auto mr-2"
+              src="https://sjc.microlink.io/ewMvrn1lav8_IlaOzYpNRx5zIgWOPrDlvukBe_vpMxROkGrQnKkPWIWnUn3-3m0R72kAb1z5og840fveXVPkpA.jpeg"
+              alt="West Coast Notaries Logo"
+              className="h-10 w-auto mr-2"
             />
-            <span className="text-coastal-blue">Sunrise</span>
-            <span className="text-sunrise-gold mx-1">Notary</span>
-            <span className="text-coastal-light">Solutions</span>
+            <span className="text-coastal-blue">West</span>
+            <span className="text-coastal-light mx-1">Coast</span>
+            <span className="text-sunrise-gold">Notaries</span>
           </Link>
         </div>
 
@@ -76,6 +76,9 @@ export function MainNav() {
                 >
                   Client Resources
                 </Link>
+                <Button asChild className="mt-2 w-full bg-coastal-blue hover:bg-coastal-light text-white">
+                  <Link href="/schedule">Book Now</Link>
+                </Button>
               </div>
             )}
           </>

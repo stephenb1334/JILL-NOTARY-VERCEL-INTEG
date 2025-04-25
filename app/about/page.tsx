@@ -1,10 +1,12 @@
 import { Award, Clock, MapPin, Shield } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { GoogleReviews } from "@/components/google-reviews"
+import { TeamSection } from "@/components/team-section"
 
 export default function AboutPage() {
   return (
-    <div className="container px-4 py-12 md:py-16">
+    <div className="container px-4 py-12 md:py-16 pt-32">
       <div className="text-center space-y-4 mb-12">
         <h1 className="text-3xl font-bold tracking-tighter font-heading text-coastal-blue sm:text-4xl md:text-5xl">
           About Us
@@ -17,17 +19,13 @@ export default function AboutPage() {
       <div className="grid gap-12 md:grid-cols-2 md:gap-16 items-center">
         <div>
           <div className="aspect-square relative overflow-hidden rounded-xl shadow-lg">
-            <img
-              src="https://sjc.microlink.io/DUW2KsuU5RtYwKM588plu7FncwhuLTuFZuz4Yj9OoU0hXNsAFu7JBR93BjW97wgbZMIyKSK5iwm7zkARgGX_EQ.jpeg"
-              alt="Professional notary"
-              className="object-cover w-full h-full"
-            />
+            <img src="/images/office-2.jpg" alt="Professional notary office" className="object-cover w-full h-full" />
           </div>
         </div>
         <div className="space-y-6">
           <h2 className="text-3xl font-bold font-heading text-coastal-blue">Our Story</h2>
           <p className="text-charcoal">
-            With over 15 years of experience in real estate and notary services, we founded Sunrise Notary Solutions to
+            With over 20 years of experience in real estate and notary services, we founded West Coast Notaries to
             provide convenient, professional notarization for the Tampa Bay community.
           </p>
           <p className="text-charcoal">
@@ -45,6 +43,16 @@ export default function AboutPage() {
             </Button>
           </div>
         </div>
+      </div>
+
+      {/* Team Section */}
+      <div className="my-20">
+        <TeamSection />
+      </div>
+
+      {/* Google Reviews */}
+      <div className="my-20">
+        <GoogleReviews />
       </div>
 
       <div className="mt-20">
@@ -65,7 +73,7 @@ export default function AboutPage() {
             </div>
             <h3 className="text-xl font-bold font-heading">Experience</h3>
             <p className="text-charcoal">
-              Over 15 years of experience in real estate and notary services in the Tampa Bay area.
+              Over 20 years of experience in real estate and notary services in the Tampa Bay area.
             </p>
           </div>
           <div className="flex flex-col items-center text-center space-y-4">
@@ -90,33 +98,28 @@ export default function AboutPage() {
       </div>
 
       <div className="mt-20">
-        <h2 className="text-3xl font-bold text-center font-heading text-coastal-blue mb-12">Our Credentials</h2>
-        <div className="grid gap-8 md:grid-cols-2">
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <div className="flex justify-center mb-4">
-              <img
-                src="https://kagi.com/proxy/notary-commission-certificate-frame-8-11.jpg?c=W6nbceBOXRuFcwEgpo100_pbhtzx1jssg7CNp4Wiq0JDIRnPY_jqsCqQc5W_0oxIbAC4lupm_6zvdWFcoP2rjSyLhRWXkY93zWKPRh6kSdveWy3N4tpCpQ5czhaOiJdhcTlEEczmGIrVltT3zZjjgw%3D%3D"
-                alt="Florida Notary Commission Certificate"
-                className="max-w-full h-auto rounded-md shadow-sm"
-              />
-            </div>
-            <h3 className="text-xl font-bold font-heading text-center text-coastal-blue mb-2">
-              Florida Notary Commission
-            </h3>
-            <p className="text-center text-charcoal">Licensed and commissioned by the State of Florida</p>
+        <h2 className="text-3xl font-bold text-center font-heading text-coastal-blue mb-12">Our Office</h2>
+        <div className="grid gap-8 md:grid-cols-3">
+          <div className="bg-white p-4 rounded-lg shadow-md">
+            <img
+              src="/images/office-1.jpg"
+              alt="West Coast Notaries Office"
+              className="w-full h-auto rounded-md shadow-sm"
+            />
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <div className="flex justify-center mb-4">
-              <img
-                src="https://kagi.com/proxy/notarycredentials-1024x299-1.png?c=e4bzmU6ptF9dt7lMCO3uEsYd7Qi0rozYoNrDjH51VT_YbSMh1tTWorNwcHKS-srLq6Ky-C5gOpZGTzRApR6MF9Z1r7B3aGbbrlErw11RxpBhAhbZalCRDmeuFQfLPO92h2JTS2iViTGInIMBlv44mg%3D%3D"
-                alt="Notary Professional Credentials"
-                className="max-w-full h-auto rounded-md shadow-sm"
-              />
-            </div>
-            <h3 className="text-xl font-bold font-heading text-center text-coastal-blue mb-2">
-              Professional Memberships
-            </h3>
-            <p className="text-center text-charcoal">Active member of leading industry organizations</p>
+          <div className="bg-white p-4 rounded-lg shadow-md">
+            <img
+              src="/images/office-2.jpg"
+              alt="West Coast Notaries Meeting Room"
+              className="w-full h-auto rounded-md shadow-sm"
+            />
+          </div>
+          <div className="bg-white p-4 rounded-lg shadow-md">
+            <img
+              src="/images/office-3.jpg"
+              alt="West Coast Notaries Reception"
+              className="w-full h-auto rounded-md shadow-sm"
+            />
           </div>
         </div>
       </div>

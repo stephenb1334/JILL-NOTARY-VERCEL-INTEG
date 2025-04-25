@@ -30,7 +30,7 @@
     "@radix-ui/react-select": "2.1.4",
     "@radix-ui/react-separator": "1.1.1",
     "@radix-ui/react-slider": "1.2.2",
-    "@radix-ui/react-slot": "1.1.1",
+    "@radix-ui/react-slot": "latest",
     "@radix-ui/react-switch": "1.1.2",
     "@radix-ui/react-tabs": "1.1.2",
     "@radix-ui/react-toast": "1.2.4",
@@ -57,7 +57,17 @@
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^0.9.6",
-    "zod": "latest"
+    "zod": "latest",
+    "@emotion/is-prop-valid": "latest",
+    "expo": "latest",
+    "expo-asset": "latest",
+    "expo-file-system": "latest",
+    "expo-gl": "latest",
+    "react-native": "latest",
+    "three": "latest",
+    "@react-three/fiber": "latest",
+    "framer-motion": "latest",
+    "@react-three/drei": "latest"
   },
   "devDependencies": {
     "@types/node": "^22",
