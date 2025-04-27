@@ -19,37 +19,34 @@ const config: Config = {
     },
     extend: {
       colors: {
-        primary: {
-          DEFAULT: "#83BFBD", // Neptune - Main brand color
-          hover: "#75aca9",
-          light: "#9EBACD", // Rock Blue
-          dark: "#668f8d",
-        },
-        secondary: {
-          DEFAULT: "#B78DC9", // East Side
-          hover: "#a47eb5",
-        },
-        accent: {
-          DEFAULT: "#C88A83", // Old Rose
-          hover: "#b47c75",
-        },
-        neutral: {
-          50: "#f8fafc",
-          100: "#f1f5f9",
-          200: "#e2e8f0",
-          300: "#cbd5e1",
-          400: "#94a3b8",
-          500: "#64748b",
-          600: "#475569",
-          700: "#334155",
-          800: "#1e293b",
-          900: "#0f172a",
-        },
+        primary: "#B78DC9", // East Side
+        "primary-hover": "#a67bb8",
+        secondary: "#83BFBD", // Neptune
+        "secondary-hover": "#75aca9",
+        accent: "#C88A83", // Old Rose
+        "accent-hover": "#b47c76",
+        neutral: "#9EBACD", // Rock Blue
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

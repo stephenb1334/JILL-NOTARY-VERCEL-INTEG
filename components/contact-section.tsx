@@ -1,13 +1,67 @@
 "use client"
 
+import type React from "react"
+
+import { useState } from "react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { Phone, Mail, MapPin } from "lucide-react"
+import { Phone, Mail, MapPin, CheckCircle } from "lucide-react"
 
 export function ContactSection() {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSuccess, setIsSuccess] = useState(false)
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+
+    const formData = new FormData(e.currentTarget)
+
+    try {
+      const response = await fetch("https://formspree.io/f/your-form-id", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      })
+
+      if (response.ok) {
+        setIsSuccess(true)
+        e.currentTarget.reset()
+
+        // Send notification email with form data
+        const name = formData.get("name") as string
+        const email = formData.get("email") as string
+        const phone = formData.get("phone") as string
+        const message = formData.get("message") as string
+
+        await fetch("/api/send-contact-notification", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            notaryEmail: "steve@theaiminded.com",
+            customerEmail: email,
+            customerName: name,
+            customerPhone: phone,
+            message: message,
+          }),
+        })
+      } else {
+        console.error("Form submission failed")
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error)
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
@@ -76,31 +130,51 @@ export function ContactSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <form className="grid gap-4">
-              <div className="grid gap-2">
-                <Label htmlFor="name">Name</Label>
-                <Input id="name" placeholder="Enter your name" />
+            {isSuccess ? (
+              <div className="bg-green-50 p-8 rounded-lg border border-green-100 text-center">
+                <div className="mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                  <CheckCircle className="h-8 w-8 text-green-600" />
+                </div>
+                <h3 className="text-xl font-bold mb-2">Message Sent Successfully!</h3>
+                <p className="text-neutral-700 mb-6">
+                  Thank you for contacting West Coast Notaries. We'll get back to you as soon as possible.
+                </p>
+                <Button onClick={() => setIsSuccess(false)} className="bg-primary hover:bg-primary/90">
+                  Send Another Message
+                </Button>
               </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="grid gap-4">
+                <div className="grid gap-2">
+                  <Label htmlFor="name">Name</Label>
+                  <Input id="name" name="name" placeholder="Enter your name" required />
+                </div>
 
-              <div className="grid gap-2">
-                <Label htmlFor="email">Email</Label>
-                <Input id="email" placeholder="Enter your email" type="email" />
-              </div>
+                <div className="grid gap-2">
+                  <Label htmlFor="email">Email</Label>
+                  <Input id="email" name="email" placeholder="Enter your email" type="email" required />
+                </div>
 
-              <div className="grid gap-2">
-                <Label htmlFor="phone">Phone</Label>
-                <Input id="phone" placeholder="Enter your phone number" type="tel" />
-              </div>
+                <div className="grid gap-2">
+                  <Label htmlFor="phone">Phone</Label>
+                  <Input id="phone" name="phone" placeholder="Enter your phone number" type="tel" required />
+                </div>
 
-              <div className="grid gap-2">
-                <Label htmlFor="message">Message</Label>
-                <Textarea id="message" placeholder="How can we help you?" rows={4} />
-              </div>
+                <div className="grid gap-2">
+                  <Label htmlFor="message">Message</Label>
+                  <Textarea id="message" name="message" placeholder="How can we help you?" rows={4} required />
+                </div>
 
-              <Button className="w-full bg-primary hover:bg-primary-hover mt-2" type="submit">
-                Send Message
-              </Button>
-            </form>
+                {/* Hidden fields for Formspree */}
+                <input type="hidden" name="_cc" value="heliumiq113672@proton.me" />
+                <input type="hidden" name="_subject" value="New Contact Form Submission - West Coast Notaries" />
+                <input type="hidden" name="_template" value="table" />
+
+                <Button className="w-full bg-primary hover:bg-primary/90 mt-2" type="submit" disabled={isSubmitting}>
+                  {isSubmitting ? "Sending..." : "Send Message"}
+                </Button>
+              </form>
+            )}
           </motion.div>
         </div>
       </div>

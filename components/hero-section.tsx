@@ -24,11 +24,20 @@ export function HeroSection() {
             Professional. Precise. Proudly Serving Our Community and Veterans. With over 20 years of experience since
             2003, specializing in loan document signings and estate planning.
           </p>
-          <div className="flex flex-col gap-2 min-[400px]:flex-row justify-center pt-4">
-            <Button asChild size="lg" className="bg-primary hover:bg-primary-hover">
+          <div className="flex flex-col gap-2 min-[400px]:flex-row justify-center pt-6">
+            <Button
+              asChild
+              size="lg"
+              className="bg-[#B78DC9] hover:bg-[#a67bb8] text-white font-medium px-8 py-3 rounded-md"
+            >
               <Link href="/services">Learn More</Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/5">
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="border-[#B78DC9] text-[#B78DC9] hover:bg-[#B78DC9]/10 font-medium px-8 py-3 rounded-md"
+            >
               <Link href="/schedule">Sign Up</Link>
             </Button>
           </div>
