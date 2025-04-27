@@ -11,7 +11,7 @@ export default function ServicesPage() {
         <h1 className="text-3xl font-bold tracking-tighter font-heading text-coastal-blue sm:text-4xl md:text-5xl">
           Our Notary Services
         </h1>
-        <p className="text-charcoal md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed max-w-[700px] mx-auto">
+        <p className="text-charcoal md:text-xl/relaxed lg:text-base/relaxed xl/text-xl/relaxed max-w-[700px] mx-auto">
           We provide comprehensive notary and related services throughout Florida.
         </p>
       </div>
@@ -22,9 +22,9 @@ export default function ServicesPage() {
           <TabsTrigger value="notary">Notary</TabsTrigger>
           <TabsTrigger value="real-estate">Real Estate</TabsTrigger>
           <TabsTrigger value="estate-planning">Estate Planning</TabsTrigger>
+          <TabsTrigger value="wedding">Wedding</TabsTrigger>
+          <TabsTrigger value="apostille">Apostille</TabsTrigger>
           <TabsTrigger value="vehicle">Vehicle</TabsTrigger>
-          <TabsTrigger value="business">Business</TabsTrigger>
-          <TabsTrigger value="other">Other</TabsTrigger>
         </TabsList>
 
         <TabsContent value="all">
@@ -309,6 +309,72 @@ export default function ServicesPage() {
                   <li className="flex items-start gap-2">
                     <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
                     <span>Testamentos, Directivas, Carta de Poder (Spanish services)</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </TabsContent>
+
+        <TabsContent value="wedding">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <Card>
+              <CardHeader>
+                <CardTitle className="font-heading">Wedding Officiant Services</CardTitle>
+                <CardDescription>Elegant ceremonies for your special day</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Classic weddings</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Intimate elopements</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Non-denominational celebrations</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Personalized ceremonies</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </TabsContent>
+
+        <TabsContent value="apostille">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <Card>
+              <CardHeader>
+                <CardTitle className="font-heading">Apostille Services</CardTitle>
+                <CardDescription>Document authentication for international use</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Birth certificates</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Marriage licenses</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Powers of attorney</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Business agreements</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-coastal-blue mt-0.5" />
+                    <span>Educational documents</span>
                   </li>
                 </ul>
               </CardContent>

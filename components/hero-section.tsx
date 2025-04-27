@@ -21,8 +21,8 @@ export function HeroSection() {
             Professional Mobile Notary Services in Florida
           </h1>
           <p className="text-xl text-neutral-600">
-            Specializing in loan document signings and estate planning. We bring the notary service to you, making the
-            process seamless and convenient.
+            Professional. Precise. Proudly Serving Our Community and Veterans. With over 20 years of experience since
+            2003, specializing in loan document signings and estate planning.
           </p>
           <div className="flex flex-col gap-2 min-[400px]:flex-row justify-center pt-4">
             <Button asChild size="lg" className="bg-primary hover:bg-primary-hover">

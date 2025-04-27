@@ -1,10 +1,10 @@
 import { HeroSection } from "@/components/hero-section"
 import { SmoothCarousel } from "@/components/smooth-carousel"
-import { ServicesSection } from "@/components/services-section"
+import { ServicesGrid } from "@/components/updated-services-grid"
 import { TestimonialsSection } from "@/components/testimonials-section"
 import { CertificationsSection } from "@/components/certifications-section"
 import { ScheduleSection } from "@/components/schedule-section"
-import { FounderSection } from "@/components/founder-section"
+import { MilitaryDiscount } from "@/components/military-discount"
 import { CredentialsSection } from "@/components/credentials-section"
 import { FaqSection } from "@/components/faq-section"
 import { ContactSection } from "@/components/contact-section"
@@ -19,11 +19,11 @@ export default function HomePage() {
           <SmoothCarousel direction="ltr" speed={100} />
         </div>
       </section>
+      <ServicesGrid />
       <TestimonialsSection />
-      <ServicesSection />
+      <MilitaryDiscount />
       <CertificationsSection />
       <ScheduleSection />
-      <FounderSection />
       <CredentialsSection />
       <FaqSection />
       <ContactSection />

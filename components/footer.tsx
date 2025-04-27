@@ -7,9 +7,10 @@ export function Footer() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">West Coast Notaries</h3>
+            <h3 className="text-xl font-bold mb-4">West Coast Notaries, LLC</h3>
             <p className="text-neutral-300 mb-4">
-              Professional mobile notary services specializing in loan signings and estate planning throughout Florida.
+              Professional mobile notary services specializing in loan signings and estate planning throughout Florida
+              since 2003.
             </p>
             <div className="flex items-center space-x-4">
               <a href="#" className="text-neutral-300 hover:text-white">
@@ -115,7 +116,7 @@ export function Footer() {
               <li className="flex items-start">
                 <Mail className="h-5 w-5 mr-3 text-primary" />
                 <div>
-                  <p className="font-medium">info@westcoastnotaries.com</p>
+                  <p className="font-medium">info@gopronotaries.com</p>
                   <p className="text-sm text-neutral-400">We respond within 24hrs</p>
                 </div>
               </li>
