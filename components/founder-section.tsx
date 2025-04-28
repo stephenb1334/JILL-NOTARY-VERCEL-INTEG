@@ -40,7 +40,7 @@ export function FounderSection() {
             className="order-1 md:order-2"
           >
             <div className="rounded-full overflow-hidden w-64 h-64 mx-auto border-4 border-white shadow-xl">
-              <img src="/images/jill-munoz.png" alt="Jill Munoz - Founder" className="w-full h-full object-cover" />
+              <img src="/images/jill-munoz-bw.jpeg" alt="Jill Munoz - Founder" className="w-full h-full object-cover" />
             </div>
           </motion.div>
         </div>
