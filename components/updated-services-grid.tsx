@@ -1,5 +1,7 @@
 import { Briefcase, FileText, Home, Users, FileSignature, Car } from "lucide-react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 export function ServicesGrid() {
   return (
@@ -15,7 +17,7 @@ export function ServicesGrid() {
         </div>
 
         <div className="grid gap-8 md:grid-cols-3">
-          <Card className="border-t-4 border-t-coastal-blue">
+          <Card className="border-t-4 border-t-coastal-blue transition-all hover:shadow-lg">
             <CardHeader>
               <div className="mb-4 w-12 h-12 rounded-full bg-coastal-blue/10 flex items-center justify-center">
                 <Home className="h-6 w-6 text-coastal-blue" />
@@ -43,9 +45,21 @@ export function ServicesGrid() {
                 </li>
               </ul>
             </CardContent>
+            <CardFooter className="flex flex-col sm:flex-row gap-2 pt-4">
+              <Button
+                asChild
+                variant="outline"
+                className="w-full sm:w-auto border-coastal-blue text-coastal-blue hover:bg-coastal-blue/5"
+              >
+                <Link href="/services">Learn More</Link>
+              </Button>
+              <Button asChild className="w-full sm:w-auto bg-coastal-blue hover:bg-coastal-light">
+                <Link href="/schedule">Book Appointment</Link>
+              </Button>
+            </CardFooter>
           </Card>
 
-          <Card className="border-t-4 border-t-coastal-light">
+          <Card className="border-t-4 border-t-coastal-light transition-all hover:shadow-lg">
             <CardHeader>
               <div className="mb-4 w-12 h-12 rounded-full bg-coastal-light/10 flex items-center justify-center">
                 <FileText className="h-6 w-6 text-coastal-light" />
@@ -73,9 +87,21 @@ export function ServicesGrid() {
                 </li>
               </ul>
             </CardContent>
+            <CardFooter className="flex flex-col sm:flex-row gap-2 pt-4">
+              <Button
+                asChild
+                variant="outline"
+                className="w-full sm:w-auto border-coastal-light text-coastal-light hover:bg-coastal-light/5"
+              >
+                <Link href="/estate-planning">Learn More</Link>
+              </Button>
+              <Button asChild className="w-full sm:w-auto bg-coastal-light hover:bg-coastal-blue">
+                <Link href="/schedule">Book Appointment</Link>
+              </Button>
+            </CardFooter>
           </Card>
 
-          <Card className="border-t-4 border-t-sunrise-gold">
+          <Card className="border-t-4 border-t-sunrise-gold transition-all hover:shadow-lg">
             <CardHeader>
               <div className="mb-4 w-12 h-12 rounded-full bg-sunrise-gold/10 flex items-center justify-center">
                 <FileSignature className="h-6 w-6 text-sunrise-gold" />
@@ -103,11 +129,23 @@ export function ServicesGrid() {
                 </li>
               </ul>
             </CardContent>
+            <CardFooter className="flex flex-col sm:flex-row gap-2 pt-4">
+              <Button
+                asChild
+                variant="outline"
+                className="w-full sm:w-auto border-sunrise-gold text-sunrise-gold hover:bg-sunrise-gold/5"
+              >
+                <Link href="/wedding-officiant">Learn More</Link>
+              </Button>
+              <Button asChild className="w-full sm:w-auto bg-sunrise-gold hover:bg-sunrise-gold/80">
+                <Link href="/schedule">Book Appointment</Link>
+              </Button>
+            </CardFooter>
           </Card>
         </div>
 
         <div className="grid gap-8 md:grid-cols-3 mt-8">
-          <Card className="border-t-4 border-t-coastal-blue">
+          <Card className="border-t-4 border-t-coastal-blue transition-all hover:shadow-lg">
             <CardHeader>
               <div className="mb-4 w-12 h-12 rounded-full bg-coastal-blue/10 flex items-center justify-center">
                 <Briefcase className="h-6 w-6 text-coastal-blue" />
@@ -135,9 +173,21 @@ export function ServicesGrid() {
                 </li>
               </ul>
             </CardContent>
+            <CardFooter className="flex flex-col sm:flex-row gap-2 pt-4">
+              <Button
+                asChild
+                variant="outline"
+                className="w-full sm:w-auto border-coastal-blue text-coastal-blue hover:bg-coastal-blue/5"
+              >
+                <Link href="/apostille">Learn More</Link>
+              </Button>
+              <Button asChild className="w-full sm:w-auto bg-coastal-blue hover:bg-coastal-light">
+                <Link href="/schedule">Book Appointment</Link>
+              </Button>
+            </CardFooter>
           </Card>
 
-          <Card className="border-t-4 border-t-coastal-light">
+          <Card className="border-t-4 border-t-coastal-light transition-all hover:shadow-lg">
             <CardHeader>
               <div className="mb-4 w-12 h-12 rounded-full bg-coastal-light/10 flex items-center justify-center">
                 <Car className="h-6 w-6 text-coastal-light" />
@@ -165,9 +215,21 @@ export function ServicesGrid() {
                 </li>
               </ul>
             </CardContent>
+            <CardFooter className="flex flex-col sm:flex-row gap-2 pt-4">
+              <Button
+                asChild
+                variant="outline"
+                className="w-full sm:w-auto border-coastal-light text-coastal-light hover:bg-coastal-light/5"
+              >
+                <Link href="/services">Learn More</Link>
+              </Button>
+              <Button asChild className="w-full sm:w-auto bg-coastal-light hover:bg-coastal-blue">
+                <Link href="/schedule">Book Appointment</Link>
+              </Button>
+            </CardFooter>
           </Card>
 
-          <Card className="border-t-4 border-t-sunrise-gold">
+          <Card className="border-t-4 border-t-sunrise-gold transition-all hover:shadow-lg">
             <CardHeader>
               <div className="mb-4 w-12 h-12 rounded-full bg-sunrise-gold/10 flex items-center justify-center">
                 <Users className="h-6 w-6 text-sunrise-gold" />
@@ -195,6 +257,18 @@ export function ServicesGrid() {
                 </li>
               </ul>
             </CardContent>
+            <CardFooter className="flex flex-col sm:flex-row gap-2 pt-4">
+              <Button
+                asChild
+                variant="outline"
+                className="w-full sm:w-auto border-sunrise-gold text-sunrise-gold hover:bg-sunrise-gold/5"
+              >
+                <Link href="/about">Learn More</Link>
+              </Button>
+              <Button asChild className="w-full sm:w-auto bg-sunrise-gold hover:bg-sunrise-gold/80">
+                <Link href="/contact">Contact Us</Link>
+              </Button>
+            </CardFooter>
           </Card>
         </div>
       </div>

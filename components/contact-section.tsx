@@ -3,12 +3,11 @@
 import type React from "react"
 
 import { useState } from "react"
-import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { Phone, Mail, MapPin, CheckCircle } from "lucide-react"
+import { Phone, Mail, MapPin } from "lucide-react"
+import Link from "next/link"
 
 export function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -18,43 +17,10 @@ export function ContactSection() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    const formData = new FormData(e.currentTarget)
-
     try {
-      const response = await fetch("https://formspree.io/f/your-form-id", {
-        method: "POST",
-        body: formData,
-        headers: {
-          Accept: "application/json",
-        },
-      })
-
-      if (response.ok) {
-        setIsSuccess(true)
-        e.currentTarget.reset()
-
-        // Send notification email with form data
-        const name = formData.get("name") as string
-        const email = formData.get("email") as string
-        const phone = formData.get("phone") as string
-        const message = formData.get("message") as string
-
-        await fetch("/api/send-contact-notification", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            notaryEmail: "steve@theaiminded.com",
-            customerEmail: email,
-            customerName: name,
-            customerPhone: phone,
-            message: message,
-          }),
-        })
-      } else {
-        console.error("Form submission failed")
-      }
+      // Replace with your form handling logic
+      await new Promise((resolve) => setTimeout(resolve, 1000))
+      setIsSuccess(true)
     } catch (error) {
       console.error("Error submitting form:", error)
     } finally {
@@ -63,119 +29,120 @@ export function ContactSection() {
   }
 
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Get in Touch</h2>
-            <p className="text-lg text-neutral-600">
-              Have questions or need to schedule an appointment? Contact us today.
-            </p>
-          </motion.div>
+    <section className="py-16 bg-neutral-50">
+      <div className="container px-4 md:px-6">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl font-bold tracking-tighter font-heading text-coastal-blue">Get In Touch</h2>
+          <p className="text-neutral-600 mt-2 max-w-2xl mx-auto">
+            Have questions or ready to schedule an appointment? Contact us today.
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
-
-            <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <Phone className="h-6 w-6 text-primary" />
+        <div className="grid md:grid-cols-2 gap-10 items-start">
+          <div>
+            <form onSubmit={handleSubmit} className="space-y-4 bg-white p-6 rounded-lg shadow-sm">
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <label htmlFor="firstName" className="text-sm font-medium">
+                    First name
+                  </label>
+                  <Input id="firstName" name="firstName" required />
                 </div>
-                <div>
-                  <h4 className="font-medium">Phone</h4>
-                  <p className="text-neutral-600">(727) 710-5455</p>
-                  <p className="text-sm text-neutral-500">Available 9AM-7PM, Monday-Saturday</p>
+                <div className="space-y-2">
+                  <label htmlFor="lastName" className="text-sm font-medium">
+                    Last name
+                  </label>
+                  <Input id="lastName" name="lastName" required />
                 </div>
               </div>
-
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <Mail className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <h4 className="font-medium">Email</h4>
-                  <p className="text-neutral-600">info@westcoastnotaries.com</p>
-                  <p className="text-sm text-neutral-500">We'll respond within 24 hours</p>
-                </div>
+              <div className="space-y-2">
+                <label htmlFor="email" className="text-sm font-medium">
+                  Email
+                </label>
+                <Input id="email" name="email" type="email" required />
               </div>
+              <div className="space-y-2">
+                <label htmlFor="phone" className="text-sm font-medium">
+                  Phone
+                </label>
+                <Input id="phone" name="phone" type="tel" required />
+              </div>
+              <div className="space-y-2">
+                <label htmlFor="message" className="text-sm font-medium">
+                  Message
+                </label>
+                <Textarea id="message" name="message" className="min-h-[120px]" required />
+              </div>
+              <Button type="submit" className="w-full bg-coastal-blue hover:bg-coastal-light" disabled={isSubmitting}>
+                {isSubmitting ? "Sending..." : "Send Message"}
+              </Button>
+            </form>
+          </div>
 
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <MapPin className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <h4 className="font-medium">Service Area</h4>
-                  <p className="text-neutral-600">Tampa Bay, FL and surrounding areas</p>
-                  <p className="text-sm text-neutral-500">Mobile service - we come to you!</p>
+          <div className="space-y-8">
+            <div className="bg-white p-6 rounded-lg shadow-sm">
+              <h3 className="text-xl font-bold font-heading text-coastal-blue mb-6">Contact Information</h3>
+
+              {/* Horizontal contact info layout */}
+              <div className="flex flex-col space-y-6">
+                <div className="flex flex-row items-center justify-between flex-wrap gap-4">
+                  <div className="flex items-center">
+                    <div className="p-3 rounded-full bg-coastal-blue/10 mr-4">
+                      <Phone className="h-6 w-6 text-coastal-blue" />
+                    </div>
+                    <div>
+                      <p className="font-medium">(727) 710-5455</p>
+                      <p className="text-sm text-neutral-500">Mon-Sat: 9AM-7PM</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center">
+                    <div className="p-3 rounded-full bg-coastal-blue/10 mr-4">
+                      <Mail className="h-6 w-6 text-coastal-blue" />
+                    </div>
+                    <div>
+                      <p className="font-medium">info@gopronotaries.com</p>
+                      <p className="text-sm text-neutral-500">We respond within 24hrs</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center">
+                    <div className="p-3 rounded-full bg-coastal-blue/10 mr-4">
+                      <MapPin className="h-6 w-6 text-coastal-blue" />
+                    </div>
+                    <div>
+                      <p className="font-medium">Tampa Bay Area, FL</p>
+                      <p className="text-sm text-neutral-500">Mobile service - we come to you!</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            {isSuccess ? (
-              <div className="bg-green-50 p-8 rounded-lg border border-green-100 text-center">
-                <div className="mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
-                  <CheckCircle className="h-8 w-8 text-green-600" />
+            <div className="bg-white p-6 rounded-lg shadow-sm">
+              <h3 className="text-xl font-bold font-heading text-coastal-blue mb-4">Business Hours</h3>
+              <div className="grid grid-cols-2 gap-3">
+                <div className="p-3 bg-neutral-50 rounded-md">
+                  <p className="font-medium">Monday - Friday</p>
+                  <p className="text-neutral-600">9:00 AM - 7:00 PM</p>
                 </div>
-                <h3 className="text-xl font-bold mb-2">Message Sent Successfully!</h3>
-                <p className="text-neutral-700 mb-6">
-                  Thank you for contacting West Coast Notaries. We'll get back to you as soon as possible.
-                </p>
-                <Button onClick={() => setIsSuccess(false)} className="bg-primary hover:bg-primary/90">
-                  Send Another Message
-                </Button>
+                <div className="p-3 bg-neutral-50 rounded-md">
+                  <p className="font-medium">Saturday</p>
+                  <p className="text-neutral-600">10:00 AM - 5:00 PM</p>
+                </div>
+                <div className="p-3 bg-neutral-50 rounded-md col-span-2">
+                  <p className="font-medium">Sunday</p>
+                  <p className="text-neutral-600">By appointment only</p>
+                </div>
               </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="grid gap-4">
-                <div className="grid gap-2">
-                  <Label htmlFor="name">Name</Label>
-                  <Input id="name" name="name" placeholder="Enter your name" required />
-                </div>
+            </div>
 
-                <div className="grid gap-2">
-                  <Label htmlFor="email">Email</Label>
-                  <Input id="email" name="email" placeholder="Enter your email" type="email" required />
-                </div>
-
-                <div className="grid gap-2">
-                  <Label htmlFor="phone">Phone</Label>
-                  <Input id="phone" name="phone" placeholder="Enter your phone number" type="tel" required />
-                </div>
-
-                <div className="grid gap-2">
-                  <Label htmlFor="message">Message</Label>
-                  <Textarea id="message" name="message" placeholder="How can we help you?" rows={4} required />
-                </div>
-
-                {/* Hidden fields for Formspree */}
-                <input type="hidden" name="_cc" value="heliumiq113672@proton.me" />
-                <input type="hidden" name="_subject" value="New Contact Form Submission - West Coast Notaries" />
-                <input type="hidden" name="_template" value="table" />
-
-                <Button className="w-full bg-primary hover:bg-primary/90 mt-2" type="submit" disabled={isSubmitting}>
-                  {isSubmitting ? "Sending..." : "Send Message"}
-                </Button>
-              </form>
-            )}
-          </motion.div>
+            <div className="flex justify-center">
+              <Button asChild size="lg" className="bg-coastal-blue hover:bg-coastal-light">
+                <Link href="/schedule">Schedule an Appointment</Link>
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
     </section>

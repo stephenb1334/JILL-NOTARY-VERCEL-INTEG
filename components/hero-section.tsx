@@ -28,17 +28,17 @@ export function HeroSection() {
             <Button
               asChild
               size="lg"
-              className="bg-[#B78DC9] hover:bg-[#a67bb8] text-white font-medium px-8 py-3 rounded-md"
+              variant="outline"
+              className="border-[#B78DC9] text-[#B78DC9] hover:bg-[#B78DC9]/10 hover:border-transparent transition-all font-medium px-8 py-3 rounded-md"
             >
               <Link href="/services">Learn More</Link>
             </Button>
             <Button
               asChild
               size="lg"
-              variant="outline"
-              className="border-[#B78DC9] text-[#B78DC9] hover:bg-[#B78DC9]/10 font-medium px-8 py-3 rounded-md"
+              className="bg-[#B78DC9] hover:bg-[#a67bb8] text-white font-medium px-8 py-3 rounded-md"
             >
-              <Link href="/schedule">Sign Up</Link>
+              <Link href="/services">Select a Service</Link>
             </Button>
           </div>
         </motion.div>
