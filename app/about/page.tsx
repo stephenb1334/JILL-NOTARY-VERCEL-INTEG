@@ -25,20 +25,17 @@ export default function AboutPage() {
         <div className="space-y-6">
           <h2 className="text-3xl font-bold font-heading text-coastal-blue">Our Story</h2>
           <p className="text-charcoal">
-            Since 2003, I have provided distinguished notarial services to discerning clients across the Tampa Bay area
-            and beyond. As a bilingual Notary offering services in both English and Spanish, I am proud to offer a
-            seamless and personalized experience for individuals and businesses requiring precision, discretion, and
-            professionalism.
+            With over 20 years of experience in real estate and notary services, we founded West Coast Notaries to
+            provide convenient, professional notarization for the Tampa Bay community.
           </p>
           <p className="text-charcoal">
-            I hold a National Certification through the esteemed Loan Signing System and maintain long-standing
-            membership with the National Notary Association, underscoring my commitment to excellence, security, and
-            ongoing education in the notarial field.
+            As longtime residents of Florida, we understand the local real estate market and the importance of reliable
+            notary services for smooth transactions. Our mission is to make the notarization process as convenient and
+            stress-free as possible.
           </p>
           <p className="text-charcoal">
-            As the proud spouse of a former United States Air Force veteran, I am deeply committed to giving back to
-            those who have served our country. I am honored to offer discounted notarial services to all United States
-            Armed Forces veterans.
+            We're proud to serve individuals, real estate professionals, lenders, title companies, and attorneys
+            throughout Tampa Bay and surrounding areas with our mobile notary services.
           </p>
           <div className="pt-4">
             <Button asChild className="bg-coastal-blue hover:bg-coastal-light">

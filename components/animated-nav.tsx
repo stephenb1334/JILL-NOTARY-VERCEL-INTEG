@@ -73,13 +73,6 @@ export function AnimatedNav() {
             className="flex items-center gap-2"
           >
             <Link href="/" className="font-accent font-bold text-xl flex items-center">
-              <motion.img
-                src="https://kagi.com/proxy/i?c=lWla4SiEvVNmj85b_dW2HcBDkb-62vZXR0vAz8RZagqafWuQNVZcY2WAn6AiPI8UmkTMUgDaxDzy5Ycdi6PBByiXmYQg96NnYzrccUWgsSz0EX5ZhQ8rXXGd5e4fI_UYeJhEPFri5X67xTa7yrnxgQ%3D%3D"
-                alt="West Coast Notaries Logo"
-                className="h-12 w-auto mr-2"
-                whileHover={{ scale: 1.05, rotate: 5 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              />
               <motion.div className="flex items-center">
                 <motion.span
                   className="text-coastal-blue"
@@ -87,15 +80,7 @@ export function AnimatedNav() {
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.2 }}
                 >
-                  West
-                </motion.span>
-                <motion.span
-                  className="text-coastal-light mx-1"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.3 }}
-                >
-                  Coast
+                  Notaries
                 </motion.span>
                 <motion.span
                   className="text-sunrise-gold"
@@ -103,7 +88,7 @@ export function AnimatedNav() {
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.4 }}
                 >
-                  Notaries
+                  By
                 </motion.span>
               </motion.div>
             </Link>

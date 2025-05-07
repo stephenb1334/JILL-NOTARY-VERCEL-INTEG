@@ -17,9 +17,8 @@ const mulish = Mulish({
 })
 
 export const metadata: Metadata = {
-  title: "West Coast Notaries | Professional Mobile Notary Services",
-  description:
-    "Expert mobile notary services specializing in loan signings and estate planning throughout Florida since 2003. Bilingual services available.",
+  title: "NotariesBy | Professional Mobile Notary Services",
+  description: "Expert mobile notary services specializing in loan signings and estate planning throughout Florida.",
     generator: 'v0.dev'
 }
 

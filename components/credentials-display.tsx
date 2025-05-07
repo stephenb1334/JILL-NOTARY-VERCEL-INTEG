@@ -38,10 +38,8 @@ export function CredentialsDisplay() {
             <div className="p-3 rounded-full bg-sunrise-gold/10">
               <Clock className="h-6 w-6 text-sunrise-gold" />
             </div>
-            <h3 className="text-xl font-bold font-heading">20+ Years Experience</h3>
-            <p className="text-charcoal">
-              Extensive experience in real estate, loan signing, and general notary work since 2003.
-            </p>
+            <h3 className="text-xl font-bold font-heading">15+ Years Experience</h3>
+            <p className="text-charcoal">Extensive experience in real estate, loan signing, and general notary work.</p>
           </div>
 
           <div className="flex flex-col items-center text-center space-y-4">

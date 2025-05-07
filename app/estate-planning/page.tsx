@@ -1,9 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Check, DollarSign, Users, Clock } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
+import { Check } from "lucide-react"
 
 export default function EstatePlanningPage() {
   return (
@@ -46,7 +44,7 @@ export default function EstatePlanningPage() {
               <div>
                 <h3 className="font-medium">Expert Guidance</h3>
                 <p className="text-sm text-charcoal/80">
-                  We'll guide you through the notarization process, ensuring all requirements are met.
+                  We&apos;ll guide you through the notarization process, ensuring all requirements are met.
                 </p>
               </div>
             </div>
@@ -91,96 +89,6 @@ export default function EstatePlanningPage() {
             />
           </div>
         </motion.div>
-      </div>
-
-      <div className="max-w-4xl mx-auto mt-16">
-        <h2 className="text-2xl font-bold font-heading text-coastal-blue mb-8 text-center">
-          Our Estate Planning Services
-        </h2>
-
-        <div className="grid md:grid-cols-3 gap-6">
-          <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="p-2 rounded-full bg-coastal-blue/10">
-                <DollarSign className="h-5 w-5 text-coastal-blue" />
-              </div>
-              <h3 className="font-medium font-heading">Pricing</h3>
-            </div>
-            <ul className="text-sm text-charcoal space-y-2">
-              <li className="flex justify-between">
-                <span>Last Will and Testament</span>
-                <span className="font-medium">$150</span>
-              </li>
-              <li className="flex justify-between">
-                <span>Living Will/Healthcare Directive</span>
-                <span className="font-medium">$65</span>
-              </li>
-              <li className="flex justify-between">
-                <span>Durable Power of Attorney</span>
-                <span className="font-medium">$125</span>
-              </li>
-              <li className="flex justify-between">
-                <span>Full Estate Planning Package</span>
-                <span className="font-medium">$350-390</span>
-              </li>
-            </ul>
-          </div>
-
-          <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="p-2 rounded-full bg-coastal-blue/10">
-                <Users className="h-5 w-5 text-coastal-blue" />
-              </div>
-              <h3 className="font-medium font-heading">Witness Requirements</h3>
-            </div>
-            <p className="text-sm text-charcoal mb-2">For proper execution of estate documents:</p>
-            <ul className="text-sm text-charcoal space-y-1">
-              <li>• Two witnesses required</li>
-              <li>• Witnesses must be unrelated to signers</li>
-              <li>• Witness fee: $25 (if we provide)</li>
-              <li>• You may provide your own witnesses</li>
-            </ul>
-          </div>
-
-          <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="p-2 rounded-full bg-coastal-blue/10">
-                <Clock className="h-5 w-5 text-coastal-blue" />
-              </div>
-              <h3 className="font-medium font-heading">Process</h3>
-            </div>
-            <p className="text-sm text-charcoal mb-2">Our streamlined process:</p>
-            <ul className="text-sm text-charcoal space-y-1">
-              <li>• Initial 30-minute virtual consultation</li>
-              <li>• Document preparation using templates</li>
-              <li>• Client review via secure email</li>
-              <li>• In-person notarization with witnesses</li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="mt-12 text-center">
-          <Button asChild size="lg" className="bg-coastal-blue hover:bg-coastal-light">
-            <Link href="/schedule">Schedule a Consultation</Link>
-          </Button>
-        </div>
-      </div>
-
-      <div className="mt-20 bg-coastal-blue/5 rounded-lg p-8">
-        <h2 className="text-2xl font-bold font-heading text-coastal-blue mb-6 text-center">
-          Bilingual Services Available
-        </h2>
-        <div className="flex flex-col md:flex-row items-center justify-center gap-8">
-          <div className="text-center md:text-left">
-            <h3 className="text-xl font-bold mb-3">English</h3>
-            <p className="text-charcoal">All estate planning documents available in English</p>
-          </div>
-          <div className="hidden md:block h-16 w-px bg-coastal-blue/20"></div>
-          <div className="text-center md:text-left">
-            <h3 className="text-xl font-bold mb-3">Español</h3>
-            <p className="text-charcoal">Testamentos, Directivas, Carta de Poder y más</p>
-          </div>
-        </div>
       </div>
     </div>
   )

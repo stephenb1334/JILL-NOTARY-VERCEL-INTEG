@@ -16,7 +16,7 @@ export function TeamSection() {
     {
       name: "Jill Munoz",
       role: "Principal & Owner",
-      image: "/images/jill-munoz-bw.jpeg",
+      image: "/images/jill-munoz.png",
       bio: "With over 20 years of experience in notary services and real estate, Jill brings unparalleled expertise to every client interaction. As the founder of West Coast Notaries, she has built a reputation for professionalism, reliability, and exceptional service throughout Florida.",
     },
     {

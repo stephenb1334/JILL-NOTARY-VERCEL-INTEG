@@ -3,7 +3,7 @@ import Link from "next/link"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
-import { Home, FileText, Briefcase, CheckCircle, Car, Globe, Users } from "lucide-react"
+import { Home, FileText, Briefcase, CheckCircle } from "lucide-react"
 
 export function ServicesSection() {
   const services = [
@@ -33,30 +33,6 @@ export function ServicesSection() {
       features: ["Affidavits", "Deeds", "Certified copies", "Oaths and affirmations"],
       image: "/images/office-3.jpg",
     },
-    {
-      id: "apostille",
-      icon: <Globe className="h-6 w-6" />,
-      title: "Apostille Services",
-      description: "Document authentication for international use, ensuring your documents are recognized worldwide.",
-      features: ["Birth certificates", "Marriage licenses", "Business documents", "Educational credentials"],
-      image: "/apostille-example.png",
-    },
-    {
-      id: "vehicle",
-      icon: <Car className="h-6 w-6" />,
-      title: "Vehicle Documentation",
-      description: "Expert assistance with all vehicle-related documentation and verification needs.",
-      features: ["VIN verification", "Odometer verification", "Title transfers", "Out-of-state registration"],
-      image: "/images/office-1.jpg",
-    },
-    {
-      id: "wedding",
-      icon: <Users className="h-6 w-6" />,
-      title: "Wedding Officiant",
-      description: "Create a meaningful ceremony that reflects your unique love story and personal values.",
-      features: ["Classic weddings", "Intimate elopements", "Non-denominational ceremonies", "Personalized vows"],
-      image: "/florida-beach-wedding.png",
-    },
   ]
 
   return (
@@ -73,14 +49,13 @@ export function ServicesSection() {
               Expert Notary Services for Your Most Important Transactions
             </h2>
             <p className="text-lg text-neutral-600">
-              We focus on high-value notary services with expertise in loan document signings, estate planning, and
-              more.
+              We focus on high-value notary services with expertise in loan document signings and estate planning.
             </p>
           </motion.div>
         </div>
 
         <Tabs defaultValue="loan-signing" className="max-w-4xl mx-auto">
-          <TabsList className="grid grid-cols-3 md:grid-cols-6 mb-12 bg-white">
+          <TabsList className="grid grid-cols-3 mb-12 bg-white">
             {services.map((service) => (
               <TabsTrigger
                 key={service.id}
@@ -88,7 +63,7 @@ export function ServicesSection() {
                 className="flex items-center gap-2 py-3 data-[state=active]:text-primary data-[state=active]:border-b-2 data-[state=active]:border-primary"
               >
                 <span className="hidden md:inline-flex">{service.icon}</span>
-                <span className="text-xs md:text-sm">{service.title.split(" ")[0]}</span>
+                <span>{service.title}</span>
               </TabsTrigger>
             ))}
           </TabsList>
@@ -114,14 +89,9 @@ export function ServicesSection() {
                     ))}
                   </ul>
 
-                  <div className="flex flex-col sm:flex-row gap-3">
-                    <Button asChild className="bg-primary hover:bg-primary-hover">
-                      <Link href={`/${service.id === "general-notary" ? "services" : service.id}`}>Learn More</Link>
-                    </Button>
-                    <Button asChild variant="outline" className="border-primary text-primary hover:bg-primary/5">
-                      <Link href="/schedule">Book Appointment</Link>
-                    </Button>
-                  </div>
+                  <Button asChild className="bg-primary hover:bg-primary-hover">
+                    <Link href="/services">Learn More</Link>
+                  </Button>
                 </div>
 
                 <div className="rounded-lg overflow-hidden shadow-lg">
