@@ -2,7 +2,21 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import { Check, Globe, Car, Briefcase, FileText, Users, Home, Heart, ChevronDown, ChevronUp } from "lucide-react"
+import {
+  Check,
+  Globe,
+  Car,
+  Briefcase,
+  FileText,
+  Users,
+  Home,
+  Heart,
+  ChevronDown,
+  ChevronUp,
+  Clock,
+  MapPin,
+  DollarSign,
+} from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
@@ -21,18 +35,18 @@ function ServiceCard({ title, description, services, detailedServices, pricing, 
   const [isExpanded, setIsExpanded] = useState(false)
 
   return (
-    <Card className="border-2 border-deep-purple-200/20">
-      <CardHeader>
+    <Card className="border-2 border-deep-purple-200/20 h-full flex flex-col">
+      <CardHeader className="flex-shrink-0">
         <CardTitle className="font-heading text-lg md:text-xl">{title}</CardTitle>
         <CardDescription className="text-sm md:text-base">{description}</CardDescription>
         {pricing && <div className="text-lg font-semibold text-deep-purple-700">{pricing}</div>}
       </CardHeader>
-      <CardContent>
-        <ul className="space-y-3 mb-4">
+      <CardContent className="flex-grow flex flex-col">
+        <ul className="space-y-3 mb-4 flex-grow">
           {services.map((service, index) => (
-            <li key={index} className="flex items-start gap-2">
-              <Check className="h-5 w-5 text-deep-purple-600 mt-0.5 flex-shrink-0" />
-              <span className="text-sm md:text-base">{service}</span>
+            <li key={index} className="flex items-start gap-3">
+              <Check className="h-4 w-4 md:h-5 md:w-5 text-deep-purple-600 mt-0.5 flex-shrink-0" />
+              <span className="text-sm md:text-base leading-relaxed">{service}</span>
             </li>
           ))}
         </ul>
@@ -42,7 +56,7 @@ function ServiceCard({ title, description, services, detailedServices, pricing, 
             <Button
               variant="outline"
               onClick={() => setIsExpanded(!isExpanded)}
-              className="w-full mb-4 border-deep-purple-200 text-deep-purple-700"
+              className="w-full mb-4 border-deep-purple-200 text-deep-purple-700 text-sm md:text-base py-2 md:py-3"
             >
               {isExpanded ? (
                 <>
@@ -58,12 +72,12 @@ function ServiceCard({ title, description, services, detailedServices, pricing, 
             </Button>
 
             {isExpanded && (
-              <div className="space-y-4 mb-4 p-4 bg-deep-purple-50 rounded-lg">
-                <h4 className="font-semibold text-deep-purple-800">Detailed Services:</h4>
+              <div className="space-y-4 mb-4 p-3 md:p-4 bg-deep-purple-50 rounded-lg">
+                <h4 className="font-semibold text-deep-purple-800 text-sm md:text-base">Detailed Services:</h4>
                 {detailedServices.map((service, index) => (
-                  <div key={index} className="border-l-4 border-deep-purple-200 pl-4">
-                    <h5 className="font-medium text-deep-purple-700 mb-1">{service.name}</h5>
-                    <p className="text-sm text-slate-blue-700">{service.description}</p>
+                  <div key={index} className="border-l-4 border-deep-purple-200 pl-3 md:pl-4">
+                    <h5 className="font-medium text-deep-purple-700 mb-1 text-sm md:text-base">{service.name}</h5>
+                    <p className="text-xs md:text-sm text-slate-blue-700 leading-relaxed">{service.description}</p>
                   </div>
                 ))}
               </div>
@@ -71,7 +85,10 @@ function ServiceCard({ title, description, services, detailedServices, pricing, 
           </>
         )}
 
-        <Button asChild className="w-full bg-deep-purple text-white border border-black">
+        <Button
+          asChild
+          className="w-full bg-deep-purple text-white border border-black mt-auto text-sm md:text-base py-2 md:py-3"
+        >
           <Link href={`/schedule?service=${encodeURIComponent(serviceType)}`}>Book {title}</Link>
         </Button>
       </CardContent>
@@ -109,6 +126,11 @@ export default function ServicesPage() {
       name: "Extended Hours Service",
       description:
         "After-hours and weekend notarization services available for urgent needs, with additional convenience fees applied.",
+    },
+    {
+      name: "Apostille Services",
+      description:
+        "Complete apostille processing for international document authentication through the US State Department.",
     },
   ]
 
@@ -247,7 +269,7 @@ export default function ServicesPage() {
   return (
     <>
       {/* Banner Section */}
-      <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px]">
+      <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px]">
         <Image
           src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/services%20banner.jpg-epBW9I30cqghyHv2MxcIPYmEgnkSXZ.jpeg"
           alt="Professional notary services - pen and document signing"
@@ -258,46 +280,46 @@ export default function ServicesPage() {
         />
         <div className="absolute inset-0 bg-deep-purple-900/60"></div>
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-4">
-          <h1 className="text-3xl font-bold tracking-tighter font-heading text-white sm:text-4xl md:text-5xl mb-4 drop-shadow-lg">
+          <h1 className="text-2xl font-bold tracking-tighter font-heading text-white sm:text-3xl md:text-4xl lg:text-5xl mb-4 drop-shadow-lg">
             Our Notary Services
           </h1>
-          <p className="text-white md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed max-w-[700px] mx-auto drop-shadow-md">
+          <p className="text-white text-sm md:text-lg lg:text-xl max-w-[600px] mx-auto drop-shadow-md px-4">
             We provide comprehensive notary and related services throughout Florida.
           </p>
         </div>
       </div>
 
-      <div className="container px-4 py-12 md:py-16">
-        <Tabs defaultValue="all" className="max-w-6xl mx-auto mb-12">
-          <TabsList className="grid w-full grid-cols-4 md:grid-cols-7 mb-8 text-xs md:text-sm">
-            <TabsTrigger value="all" className="text-xs md:text-sm px-2 md:px-4">
+      <div className="container px-4 py-8 md:py-12 lg:py-16">
+        <Tabs defaultValue="all" className="max-w-6xl mx-auto mb-8 md:mb-12">
+          <TabsList className="grid w-full grid-cols-4 md:grid-cols-7 mb-6 md:mb-8 text-xs md:text-sm overflow-x-auto">
+            <TabsTrigger value="all" className="text-xs md:text-sm px-1 md:px-4 whitespace-nowrap">
               All
             </TabsTrigger>
-            <TabsTrigger value="notary" className="text-xs md:text-sm px-2 md:px-4">
+            <TabsTrigger value="notary" className="text-xs md:text-sm px-1 md:px-4 whitespace-nowrap">
               Notary
             </TabsTrigger>
-            <TabsTrigger value="real-estate" className="text-xs md:text-sm px-1 md:px-4">
+            <TabsTrigger value="real-estate" className="text-xs md:text-sm px-1 md:px-4 whitespace-nowrap">
               Real Estate
             </TabsTrigger>
-            <TabsTrigger value="estate-planning" className="text-xs md:text-sm px-1 md:px-4">
+            <TabsTrigger value="estate-planning" className="text-xs md:text-sm px-1 md:px-4 whitespace-nowrap">
               Estate Planning
             </TabsTrigger>
-            <TabsTrigger value="vehicle" className="text-xs md:text-sm px-2 md:px-4 md:block hidden">
+            <TabsTrigger value="vehicle" className="text-xs md:text-sm px-1 md:px-4 whitespace-nowrap md:block hidden">
               Vehicle
             </TabsTrigger>
-            <TabsTrigger value="business" className="text-xs md:text-sm px-2 md:px-4 md:block hidden">
+            <TabsTrigger value="business" className="text-xs md:text-sm px-1 md:px-4 whitespace-nowrap md:block hidden">
               Business
             </TabsTrigger>
-            <TabsTrigger value="other" className="text-xs md:text-sm px-2 md:px-4 md:block hidden">
+            <TabsTrigger value="other" className="text-xs md:text-sm px-1 md:px-4 whitespace-nowrap md:block hidden">
               Other
             </TabsTrigger>
           </TabsList>
 
           <TabsContent value="all">
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-6 md:gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
               <ServiceCard
-                title="Notary Services"
-                description="Professional notarization for all document types"
+                title="Document Services"
+                description="Professional notarization and apostille services"
                 services={notaryServices}
                 detailedServices={notaryDetailed}
                 serviceType="notary"
@@ -347,10 +369,10 @@ export default function ServicesPage() {
           </TabsContent>
 
           <TabsContent value="notary">
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-6 md:gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
               <ServiceCard
-                title="Notary Services"
-                description="Professional notarization for all document types"
+                title="Document Services"
+                description="Professional notarization and apostille services"
                 services={notaryServices}
                 detailedServices={notaryDetailed}
                 serviceType="notary"
@@ -359,7 +381,7 @@ export default function ServicesPage() {
           </TabsContent>
 
           <TabsContent value="real-estate">
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-6 md:gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
               <ServiceCard
                 title="Real Estate Services"
                 description="Expert notarization for real estate transactions"
@@ -371,7 +393,7 @@ export default function ServicesPage() {
           </TabsContent>
 
           <TabsContent value="estate-planning">
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-6 md:gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
               <ServiceCard
                 title="Estate Planning"
                 description="Secure your legacy with proper documentation"
@@ -383,7 +405,7 @@ export default function ServicesPage() {
           </TabsContent>
 
           <TabsContent value="vehicle">
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-6 md:gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
               <ServiceCard
                 title="Vehicle Documentation"
                 description="Vehicle-related verification and documentation"
@@ -395,7 +417,7 @@ export default function ServicesPage() {
           </TabsContent>
 
           <TabsContent value="business">
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-6 md:gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
               <ServiceCard
                 title="Business & Employment"
                 description="Services for businesses and employers"
@@ -407,7 +429,7 @@ export default function ServicesPage() {
           </TabsContent>
 
           <TabsContent value="other">
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-6 md:gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
               <ServiceCard
                 title="Apostille Services"
                 description="International document authentication through US State Department"
@@ -420,103 +442,164 @@ export default function ServicesPage() {
           </TabsContent>
         </Tabs>
 
-        {/* Rest of the page content remains the same */}
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-deep-purple-700/5 rounded-lg p-6 md:p-8 mb-12">
-            <h2 className="text-xl md:text-2xl font-bold font-heading text-deep-purple-700 mb-4">
+        {/* Service Categories Section */}
+        <div className="max-w-6xl mx-auto">
+          <div className="bg-deep-purple-700/5 rounded-lg p-4 md:p-6 lg:p-8 mb-8 md:mb-12">
+            <h2 className="text-lg md:text-xl lg:text-2xl font-bold font-heading text-deep-purple-700 mb-4 md:mb-6 text-center">
               Our Service Categories
             </h2>
-            <div className="grid gap-4 md:gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            <div className="grid gap-3 md:gap-4 lg:gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
               <div className="bg-white p-3 md:p-4 rounded-lg shadow-sm border text-center">
                 <div className="flex justify-center mb-2 md:mb-3">
                   <div className="p-2 rounded-full bg-deep-purple-700/10">
-                    <FileText className="h-5 w-5 text-deep-purple-700" />
+                    <FileText className="h-4 w-4 md:h-5 md:w-5 text-deep-purple-700" />
                   </div>
                 </div>
-                <h3 className="font-medium font-heading text-sm md:text-base">Notary Services</h3>
-                <p className="text-xs text-neutral-600 mt-1">Professional notarization for all document types</p>
+                <h3 className="font-medium font-heading text-xs md:text-sm lg:text-base">Document Services</h3>
+                <p className="text-xs text-neutral-600 mt-1 hidden md:block">
+                  Professional notarization and apostille services
+                </p>
               </div>
 
               <div className="bg-white p-3 md:p-4 rounded-lg shadow-sm border text-center">
                 <div className="flex justify-center mb-2 md:mb-3">
                   <div className="p-2 rounded-full bg-deep-purple-700/10">
-                    <Home className="h-5 w-5 text-deep-purple-700" />
+                    <Home className="h-4 w-4 md:h-5 md:w-5 text-deep-purple-700" />
                   </div>
                 </div>
-                <h3 className="font-medium font-heading text-sm md:text-base">Real Estate</h3>
-                <p className="text-xs text-neutral-600 mt-1">Expert notarization for real estate transactions</p>
+                <h3 className="font-medium font-heading text-xs md:text-sm lg:text-base">Real Estate</h3>
+                <p className="text-xs text-neutral-600 mt-1 hidden md:block">
+                  Expert notarization for real estate transactions
+                </p>
               </div>
 
               <div className="bg-white p-3 md:p-4 rounded-lg shadow-sm border text-center">
                 <div className="flex justify-center mb-2 md:mb-3">
                   <div className="p-2 rounded-full bg-deep-purple-700/10">
-                    <FileText className="h-5 w-5 text-deep-purple-700" />
+                    <FileText className="h-4 w-4 md:h-5 md:w-5 text-deep-purple-700" />
                   </div>
                 </div>
-                <h3 className="font-medium font-heading text-sm md:text-base">Estate Planning</h3>
-                <p className="text-xs text-neutral-600 mt-1">Secure your legacy with proper documentation</p>
+                <h3 className="font-medium font-heading text-xs md:text-sm lg:text-base">Estate Planning</h3>
+                <p className="text-xs text-neutral-600 mt-1 hidden md:block">
+                  Secure your legacy with proper documentation
+                </p>
               </div>
 
               <div className="bg-white p-3 md:p-4 rounded-lg shadow-sm border text-center">
                 <div className="flex justify-center mb-2 md:mb-3">
                   <div className="p-2 rounded-full bg-deep-purple-100">
-                    <Globe className="h-5 w-5 text-deep-purple-700" />
+                    <Globe className="h-4 w-4 md:h-5 md:w-5 text-deep-purple-700" />
                   </div>
                 </div>
-                <h3 className="font-medium font-heading text-sm md:text-base">Apostille Services</h3>
-                <p className="text-xs text-neutral-600 mt-1">International document authentication</p>
+                <h3 className="font-medium font-heading text-xs md:text-sm lg:text-base">Apostille Services</h3>
+                <p className="text-xs text-neutral-600 mt-1 hidden md:block">International document authentication</p>
               </div>
 
               <div className="bg-white p-3 md:p-4 rounded-lg shadow-sm border text-center">
                 <div className="flex justify-center mb-2 md:mb-3">
                   <div className="p-2 rounded-full bg-deep-purple-700/10">
-                    <Car className="h-5 w-5 text-deep-purple-700" />
+                    <Car className="h-4 w-4 md:h-5 md:w-5 text-deep-purple-700" />
                   </div>
                 </div>
-                <h3 className="font-medium font-heading text-sm md:text-base">Vehicle Documentation</h3>
-                <p className="text-xs text-neutral-600 mt-1">Vehicle-related verification and documentation</p>
+                <h3 className="font-medium font-heading text-xs md:text-sm lg:text-base">Vehicle Documentation</h3>
+                <p className="text-xs text-neutral-600 mt-1 hidden md:block">
+                  Vehicle-related verification and documentation
+                </p>
               </div>
 
               <div className="bg-white p-3 md:p-4 rounded-lg shadow-sm border text-center">
                 <div className="flex justify-center mb-2 md:mb-3">
                   <div className="p-2 rounded-full bg-deep-purple-700/10">
-                    <Briefcase className="h-5 w-5 text-deep-purple-700" />
+                    <Briefcase className="h-4 w-4 md:h-5 md:w-5 text-deep-purple-700" />
                   </div>
                 </div>
-                <h3 className="font-medium font-heading text-sm md:text-base">Business Services</h3>
-                <p className="text-xs text-neutral-600 mt-1">Services for businesses and employers</p>
+                <h3 className="font-medium font-heading text-xs md:text-sm lg:text-base">Business Services</h3>
+                <p className="text-xs text-neutral-600 mt-1 hidden md:block">Services for businesses and employers</p>
               </div>
 
               <div className="bg-white p-3 md:p-4 rounded-lg shadow-sm border text-center">
                 <div className="flex justify-center mb-2 md:mb-3">
                   <div className="p-2 rounded-full bg-deep-purple-700/10">
-                    <Users className="h-5 w-5 text-deep-purple-700" />
+                    <Users className="h-4 w-4 md:h-5 md:w-5 text-deep-purple-700" />
                   </div>
                 </div>
-                <h3 className="font-medium font-heading text-sm md:text-base">Bilingual Services</h3>
-                <p className="text-xs text-neutral-600 mt-1">Services in English and Spanish</p>
+                <h3 className="font-medium font-heading text-xs md:text-sm lg:text-base">Bilingual Services</h3>
+                <p className="text-xs text-neutral-600 mt-1 hidden md:block">Services in English and Spanish</p>
               </div>
 
               <div className="bg-white p-3 md:p-4 rounded-lg shadow-sm border text-center">
                 <div className="flex justify-center mb-2 md:mb-3">
                   <div className="p-2 rounded-full bg-deep-purple-100">
-                    <Heart className="h-5 w-5 text-deep-purple-700" />
+                    <Heart className="h-4 w-4 md:h-5 md:w-5 text-deep-purple-700" />
                   </div>
                 </div>
-                <h3 className="font-medium font-heading text-sm md:text-base">Wedding Officiant</h3>
-                <p className="text-xs text-neutral-600 mt-1">Elegant wedding ceremony services</p>
+                <h3 className="font-medium font-heading text-xs md:text-sm lg:text-base">Wedding Officiant</h3>
+                <p className="text-xs text-neutral-600 mt-1 hidden md:block">Elegant wedding ceremony services</p>
               </div>
             </div>
           </div>
 
+          {/* Service Details Section */}
+          <div className="grid gap-4 md:gap-6 lg:gap-8 md:grid-cols-3 mb-8 md:mb-12">
+            <div className="bg-white p-4 md:p-6 rounded-lg shadow-sm border">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2 rounded-full bg-deep-purple-700/10">
+                  <Clock className="h-4 w-4 md:h-5 md:w-5 text-deep-purple-700" />
+                </div>
+                <h3 className="font-medium font-heading text-sm md:text-base">Availability</h3>
+              </div>
+              <p className="text-xs md:text-sm text-neutral-600 mb-2">
+                We offer flexible scheduling to accommodate your needs:
+              </p>
+              <ul className="text-xs md:text-sm text-neutral-600 space-y-1">
+                <li>• Monday - Friday: 9AM - 7PM</li>
+                <li>• Saturday: 10AM - 5PM</li>
+                <li>• Sunday: By appointment</li>
+                <li>• Extended hours available (fee applies)</li>
+              </ul>
+            </div>
+
+            <div className="bg-white p-4 md:p-6 rounded-lg shadow-sm border">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2 rounded-full bg-deep-purple-700/10">
+                  <MapPin className="h-4 w-4 md:h-5 md:w-5 text-deep-purple-700" />
+                </div>
+                <h3 className="font-medium font-heading text-sm md:text-base">Service Area</h3>
+              </div>
+              <p className="text-xs md:text-sm text-neutral-600 mb-2">We provide mobile notary services throughout:</p>
+              <ul className="text-xs md:text-sm text-neutral-600 space-y-1">
+                <li>• All 67 Florida counties</li>
+                <li>• Tampa Bay area</li>
+                <li>• St. Petersburg</li>
+                <li>• Clearwater and surrounding areas</li>
+              </ul>
+            </div>
+
+            <div className="bg-white p-4 md:p-6 rounded-lg shadow-sm border">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2 rounded-full bg-deep-purple-700/10">
+                  <DollarSign className="h-4 w-4 md:h-5 md:w-5 text-deep-purple-700" />
+                </div>
+                <h3 className="font-medium font-heading text-sm md:text-base">Pricing</h3>
+              </div>
+              <p className="text-xs md:text-sm text-neutral-600 mb-2">Our competitive pricing structure:</p>
+              <ul className="text-xs md:text-sm text-neutral-600 space-y-1">
+                <li>• Standard notarization: $10/signature</li>
+                <li>• Travel fees vary by location</li>
+                <li>• Apostille services: $250 per document</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* CTA Section */}
           <div className="text-center">
-            <h2 className="text-xl md:text-2xl font-bold font-heading text-deep-purple-700 mb-4">
+            <h2 className="text-lg md:text-xl lg:text-2xl font-bold font-heading text-deep-purple-700 mb-4">
               Ready to Schedule a Notary Service?
             </h2>
-            <p className="text-neutral-600 max-w-[700px] mx-auto mb-6 text-sm md:text-base">
+            <p className="text-neutral-600 max-w-[600px] mx-auto mb-6 text-sm md:text-base px-4">
               Book an appointment today and experience our professional, convenient mobile notary services.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
               <Button asChild size="lg" className="bg-deep-purple text-white border border-black">
                 <Link href="/schedule">Book an Appointment</Link>
               </Button>
@@ -527,14 +610,15 @@ export default function ServicesPage() {
           </div>
         </div>
 
-        <div className="mt-16 text-center space-y-4">
-          <h2 className="text-xl md:text-2xl font-bold tracking-tighter font-heading text-deep-purple-700">
+        {/* Service Areas */}
+        <div className="mt-12 md:mt-16 text-center space-y-4">
+          <h2 className="text-lg md:text-xl lg:text-2xl font-bold tracking-tighter font-heading text-deep-purple-700">
             Service Areas
           </h2>
-          <p className="text-neutral-600 md:text-lg/relaxed max-w-[700px] mx-auto text-sm md:text-base">
+          <p className="text-neutral-600 text-sm md:text-base lg:text-lg max-w-[600px] mx-auto px-4">
             We provide mobile notary services throughout all 67 Florida counties, including:
           </p>
-          <div className="grid gap-2 md:gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 max-w-3xl mx-auto mt-6">
+          <div className="grid gap-2 md:gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 max-w-4xl mx-auto mt-6 px-4">
             <div className="bg-deep-purple-700/5 p-2 md:p-3 rounded-md text-xs md:text-sm">Tampa</div>
             <div className="bg-deep-purple-700/5 p-2 md:p-3 rounded-md text-xs md:text-sm">St. Petersburg</div>
             <div className="bg-deep-purple-700/5 p-2 md:p-3 rounded-md text-xs md:text-sm">Clearwater</div>
