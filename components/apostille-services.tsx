@@ -21,15 +21,26 @@ export function ApostilleServices() {
           <div>
             <Card className="border-2 border-deep-purple-200">
               <CardHeader>
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="p-3 rounded-full bg-deep-purple-100">
-                    <Globe className="h-6 w-6 text-deep-purple-700" />
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="flex-shrink-0">
+                    <Image
+                      src="/images/apostille2.jpg"
+                      alt="Florida Apostille Services - Florida flag with world map representing international document authentication"
+                      width={90}
+                      height={130}
+                      className="rounded-lg border-2 border-deep-purple-200 bg-white p-2"
+                    />
                   </div>
-                  <div>
-                    <CardTitle className="font-heading text-xl text-deep-purple-800">
-                      Professional Apostille Services
-                    </CardTitle>
-                    <div className="flex items-center gap-2 mt-1">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="p-3 rounded-full bg-deep-purple-100">
+                        <Globe className="h-6 w-6 text-deep-purple-700" />
+                      </div>
+                      <CardTitle className="font-heading text-xl text-deep-purple-800">
+                        Professional Apostille Services
+                      </CardTitle>
+                    </div>
+                    <div className="flex items-center gap-2">
                       <DollarSign className="h-4 w-4 text-steel-blue-600" />
                       <span className="text-lg font-semibold text-steel-blue-700">$250 per Apostille document</span>
                     </div>
@@ -37,15 +48,6 @@ export function ApostilleServices() {
                 </div>
               </CardHeader>
               <CardContent>
-                <div className="mb-6">
-                  <Image
-                    src="/images/apostille-services-new.jpg"
-                    alt="Florida Apostille Process - Documents processed through US Department of State for international use"
-                    width={400}
-                    height={300}
-                    className="w-full h-64 object-contain rounded-lg border-2 border-deep-purple-200 bg-white p-4"
-                  />
-                </div>
                 <p className="text-slate-blue-700 mb-6">
                   NotariesBy provides streamlined Apostille services across Tampa Bay, working directly with the US
                   Department of State and appropriate governmental agencies to facilitate the authentication of

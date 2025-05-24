@@ -1,7 +1,6 @@
 "use client"
 
 import { motion } from "framer-motion"
-import Image from "next/image"
 
 export function FounderSection() {
   return (
@@ -41,12 +40,10 @@ export function FounderSection() {
             className="order-1 md:order-2"
           >
             <div className="rounded-full overflow-hidden w-64 h-64 mx-auto border-4 border-white shadow-xl relative">
-              <Image
-                src="/images/jill-headshot.png"
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jill%20headshot.PNG-R3RJpMsPDtNr3rNPhhMvBWlZ6zZkw2.png"
                 alt="Jill Munoz - Founder"
-                fill
-                className="object-cover"
-                sizes="256px"
+                className="w-full h-full object-cover"
               />
             </div>
           </motion.div>

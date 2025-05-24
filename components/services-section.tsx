@@ -33,6 +33,20 @@ export function ServicesSection() {
       features: ["Affidavits", "Deeds", "Certified copies", "Oaths and affirmations"],
       image: "/images/office-3.jpg",
     },
+    {
+      id: "apostille-services",
+      icon: <FileText className="h-6 w-6" />,
+      title: "Apostille Services",
+      description:
+        "Professional apostille services for Florida documents requiring international authentication and recognition.",
+      features: [
+        "Document authentication",
+        "International recognition",
+        "Florida state certification",
+        "Fast processing times",
+      ],
+      image: "/images/florida-apostille-process.jpg",
+    },
   ]
 
   return (
@@ -55,7 +69,7 @@ export function ServicesSection() {
         </div>
 
         <Tabs defaultValue="loan-signing" className="max-w-4xl mx-auto">
-          <TabsList className="grid grid-cols-3 mb-12 bg-white">
+          <TabsList className="grid grid-cols-4 mb-12 bg-white">
             {services.map((service) => (
               <TabsTrigger
                 key={service.id}

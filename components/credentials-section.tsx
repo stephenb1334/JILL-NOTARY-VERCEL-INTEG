@@ -39,9 +39,9 @@ export function CredentialsSection() {
             viewport={{ once: true }}
             className="bg-white/10 backdrop-blur-sm p-6 rounded-lg"
           >
-            <h3 className="text-xl font-bold mb-4">NNA Certification</h3>
+            <h3 className="text-xl font-bold mb-4">E&O Insurance</h3>
             <div className="aspect-video rounded-lg overflow-hidden">
-              <img src="/images/background-2.jpg" alt="NNA Certification" className="w-full h-full object-cover" />
+              <img src="/images/background-3.jpg" alt="E&O Insurance" className="w-full h-full object-cover" />
             </div>
           </motion.div>
 
@@ -52,9 +52,9 @@ export function CredentialsSection() {
             viewport={{ once: true }}
             className="bg-white/10 backdrop-blur-sm p-6 rounded-lg"
           >
-            <h3 className="text-xl font-bold mb-4">E&O Insurance</h3>
+            <h3 className="text-xl font-bold mb-4">NNA Certification</h3>
             <div className="aspect-video rounded-lg overflow-hidden">
-              <img src="/images/background-3.jpg" alt="E&O Insurance" className="w-full h-full object-cover" />
+              <img src="/images/background-2.jpg" alt="NNA Certification" className="w-full h-full object-cover" />
             </div>
           </motion.div>
         </div>

@@ -26,8 +26,8 @@ export default function HomePage() {
       <ServicesSection />
       <ApostilleServices />
       <WeddingOfficiantServices />
-      <CertificationsSection />
       <ScheduleSection />
+      <CertificationsSection />
       <FounderSection />
       <CredentialsSection />
       <FaqSection />
