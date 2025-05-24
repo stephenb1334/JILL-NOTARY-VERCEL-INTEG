@@ -1,6 +1,9 @@
 import { HeroSection } from "@/components/hero-section"
 import { SmoothCarousel } from "@/components/smooth-carousel"
+import { CredibilitySection } from "@/components/credibility-section"
 import { ServicesSection } from "@/components/services-section"
+import { ApostilleServices } from "@/components/apostille-services"
+import { WeddingOfficiantServices } from "@/components/wedding-officiant-services"
 import { TestimonialsSection } from "@/components/testimonials-section"
 import { CertificationsSection } from "@/components/certifications-section"
 import { ScheduleSection } from "@/components/schedule-section"
@@ -13,6 +16,7 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
+      <CredibilitySection />
       <section className="py-4 bg-white">
         <div>
           <SmoothCarousel direction="rtl" speed={80} />
@@ -20,6 +24,8 @@ export default function HomePage() {
       </section>
       <TestimonialsSection />
       <ServicesSection />
+      <ApostilleServices />
+      <WeddingOfficiantServices />
       <CertificationsSection />
       <ScheduleSection />
       <FounderSection />

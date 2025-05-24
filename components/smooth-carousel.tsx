@@ -8,7 +8,10 @@ interface SmoothCarouselProps {
 
 export function SmoothCarousel({ direction = "rtl", speed = 60 }: SmoothCarouselProps) {
   const images = [
-    { src: "/images/jill-munoz.png", alt: "Professional headshot" },
+    {
+      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jill%20headshot.PNG-R3RJpMsPDtNr3rNPhhMvBWlZ6zZkw2.png",
+      alt: "Professional headshot",
+    },
     { src: "/images/background-2.jpg", alt: "Signing documents" },
     { src: "/images/background-3.jpg", alt: "Legal documents" },
     { src: "/images/background-1.jpg", alt: "Notary stamp" },

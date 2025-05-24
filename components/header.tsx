@@ -38,10 +38,11 @@ export function Header() {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center space-x-2">
-            <span className="text-2xl font-heading font-bold">
-              <span className="text-primary">Notaries</span>
-              <span className="text-secondary">By</span>
-            </span>
+            <img
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jill-logo-png.PNG-fVdHOEI1YyjHpMDwUKHO2ywRaF0Kps.png"
+              alt="NotariesBy Logo"
+              className="h-8 w-auto"
+            />
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
@@ -56,7 +57,7 @@ export function Header() {
                 </Link>
               ))}
             </nav>
-            <Button asChild className="bg-primary hover:bg-primary-hover text-white">
+            <Button asChild className="bg-deep-purple hover:bg-purple-700 text-white border border-black">
               <Link href="/schedule">Book Now</Link>
             </Button>
           </div>
@@ -84,7 +85,7 @@ export function Header() {
                   {item.name}
                 </Link>
               ))}
-              <Button asChild className="mt-2 bg-primary hover:bg-primary-hover text-white">
+              <Button asChild className="mt-2 bg-deep-purple hover:bg-purple-700 text-white border border-black">
                 <Link href="/schedule" onClick={() => setIsOpen(false)}>
                   Book Now
                 </Link>

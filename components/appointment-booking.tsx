@@ -170,6 +170,8 @@ export function AppointmentBooking() {
                           <SelectItem value="estate-planning">Estate Planning Documents</SelectItem>
                           <SelectItem value="marriage">Marriage Services</SelectItem>
                           <SelectItem value="other">Other Documents</SelectItem>
+                          <SelectItem value="apostille">Apostille Services</SelectItem>
+                          <SelectItem value="wedding-officiant">Wedding Officiant Services</SelectItem>
                         </SelectContent>
                       </Select>
                       <FormMessage />
@@ -273,7 +275,11 @@ export function AppointmentBooking() {
                   )}
                 />
 
-                <Button type="submit" className="w-full bg-coastal-blue hover:bg-coastal-light" disabled={isSubmitting}>
+                <Button
+                  type="submit"
+                  className="w-full bg-deep-purple-700 hover:bg-deep-purple-800"
+                  disabled={isSubmitting}
+                >
                   {isSubmitting ? "Submitting..." : "Request Appointment"}
                 </Button>
               </form>

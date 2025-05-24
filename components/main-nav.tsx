@@ -20,13 +20,10 @@ export function MainNav() {
         <div className="flex items-center gap-2">
           <Link href="/" className="font-accent font-bold text-xl flex items-center">
             <img
-              src="https://sjc.microlink.io/ewMvrn1lav8_IlaOzYpNRx5zIgWOPrDlvukBe_vpMxROkGrQnKkPWIWnUn3-3m0R72kAb1z5og840fveXVPkpA.jpeg"
-              alt="West Coast Notaries Logo"
-              className="h-10 w-auto mr-2"
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jill-logo-png.PNG-fVdHOEI1YyjHpMDwUKHO2ywRaF0Kps.png"
+              alt="NotariesBy Logo"
+              className="h-8 w-auto"
             />
-            <span className="text-coastal-blue">West</span>
-            <span className="text-coastal-light mx-1">Coast</span>
-            <span className="text-sunrise-gold">Notaries</span>
           </Link>
         </div>
 
@@ -76,7 +73,10 @@ export function MainNav() {
                 >
                   Client Resources
                 </Link>
-                <Button asChild className="mt-2 w-full bg-coastal-blue hover:bg-coastal-light text-white">
+                <Button
+                  asChild
+                  className="mt-2 w-full bg-deep-purple hover:bg-purple-700 text-white border border-black"
+                >
                   <Link href="/schedule">Book Now</Link>
                 </Button>
               </div>
@@ -120,7 +120,7 @@ export function MainNav() {
             >
               Client Resources
             </Link>
-            <Button asChild size="sm" className="bg-coastal-blue hover:bg-coastal-light text-white">
+            <Button asChild size="sm" className="bg-deep-purple hover:bg-purple-700 text-white border border-black">
               <Link href="/schedule">Book Now</Link>
             </Button>
           </nav>

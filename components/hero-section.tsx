@@ -18,14 +18,14 @@ export function HeroSection() {
             sizes="100vw"
             style={{ objectFit: "cover" }}
           />
-          <div className="absolute inset-0 bg-primary/40 backdrop-blur-sm"></div>
+          <div className="absolute inset-0 bg-black/60"></div>
         </div>
       </div>
 
       <div className="container px-4 md:px-6 mx-auto relative z-10">
         <div className="flex flex-col justify-center space-y-6 text-center max-w-3xl mx-auto">
           <motion.h1
-            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white drop-shadow-md"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white drop-shadow-lg"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
@@ -34,7 +34,7 @@ export function HeroSection() {
           </motion.h1>
 
           <motion.p
-            className="text-xl text-white/90 drop-shadow"
+            className="text-xl text-white drop-shadow-md"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -51,13 +51,13 @@ export function HeroSection() {
           >
             <Link
               href="/services"
-              className="inline-block px-6 py-3 text-black bg-pink-400/30 border-2 border-white rounded-md font-medium text-lg hover:bg-pink-400/50 transition-colors shadow-md"
+              className="inline-block px-8 py-4 text-white bg-primary/90 border-2 border-white rounded-md font-medium text-lg hover:bg-primary transition-colors shadow-lg backdrop-blur-sm"
             >
               Learn More
             </Link>
             <Link
               href="/schedule"
-              className="inline-block px-6 py-3 text-black bg-pink-400/30 border-2 border-white rounded-md font-medium text-lg hover:bg-pink-400/50 transition-colors shadow-md"
+              className="inline-block px-8 py-4 text-primary bg-white border-2 border-white rounded-md font-medium text-lg hover:bg-gray-100 transition-colors shadow-lg"
             >
               Book Now
             </Link>

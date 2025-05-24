@@ -169,6 +169,8 @@ export default function BookingPage() {
                             <SelectItem value="affidavits">Affidavits & Statements</SelectItem>
                             <SelectItem value="estate-planning">Estate Planning</SelectItem>
                             <SelectItem value="other">Other Documents</SelectItem>
+                            <SelectItem value="apostille">Apostille Services</SelectItem>
+                            <SelectItem value="wedding-officiant">Wedding Officiant Services</SelectItem>
                           </SelectContent>
                         </Select>
                         <FormMessage />
@@ -289,14 +291,14 @@ export default function BookingPage() {
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-center gap-3">
-                <Phone className="h-5 w-5 text-sky-600" />
+                <Phone className="h-5 w-5 text-deep-purple-600" />
                 <div>
                   <p className="font-medium">(727) 555-1234</p>
                   <p className="text-sm text-gray-500">Available 9AM-7PM, Mon-Sat</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <Mail className="h-5 w-5 text-sky-600" />
+                <Mail className="h-5 w-5 text-deep-purple-600" />
                 <div>
                   <p className="font-medium">info@spnotary.com</p>
                   <p className="text-sm text-gray-500">We'll respond within 24 hours</p>

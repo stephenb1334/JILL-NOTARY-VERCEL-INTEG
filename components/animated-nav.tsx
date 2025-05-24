@@ -73,24 +73,14 @@ export function AnimatedNav() {
             className="flex items-center gap-2"
           >
             <Link href="/" className="font-accent font-bold text-xl flex items-center">
-              <motion.div className="flex items-center">
-                <motion.span
-                  className="text-coastal-blue"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.2 }}
-                >
-                  Notaries
-                </motion.span>
-                <motion.span
-                  className="text-sunrise-gold"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.4 }}
-                >
-                  By
-                </motion.span>
-              </motion.div>
+              <motion.img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jill-logo-png.PNG-fVdHOEI1YyjHpMDwUKHO2ywRaF0Kps.png"
+                alt="NotariesBy Logo"
+                className="h-8 w-auto"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+              />
             </Link>
           </motion.div>
 
@@ -138,7 +128,10 @@ export function AnimatedNav() {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: navItems.length * 0.1 }}
                       >
-                        <Button asChild className="w-full mt-2 bg-coastal-blue hover:bg-coastal-light text-white">
+                        <Button
+                          asChild
+                          className="w-full mt-2 bg-deep-purple hover:bg-purple-700 text-white border border-black"
+                        >
                           <Link href="/schedule">Book Now</Link>
                         </Button>
                       </motion.div>
@@ -161,7 +154,7 @@ export function AnimatedNav() {
                 <Button
                   asChild
                   size="sm"
-                  className="bg-coastal-blue hover:bg-coastal-light text-white"
+                  className="bg-deep-purple hover:bg-purple-700 text-white border border-black"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
