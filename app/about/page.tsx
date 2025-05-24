@@ -45,7 +45,7 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* Team Section */}
+      {/* New Team Section */}
       <div className="my-20">
         <TeamSection />
       </div>

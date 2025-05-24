@@ -310,8 +310,11 @@ export default function ServicesPage() {
             <TabsTrigger value="business" className="text-xs md:text-sm px-1 md:px-4 whitespace-nowrap md:block hidden">
               Business
             </TabsTrigger>
-            <TabsTrigger value="other" className="text-xs md:text-sm px-1 md:px-4 whitespace-nowrap md:block hidden">
-              Other
+            <TabsTrigger
+              value="apostille"
+              className="text-xs md:text-sm px-1 md:px-4 whitespace-nowrap md:block hidden"
+            >
+              Apostille
             </TabsTrigger>
           </TabsList>
 
@@ -428,7 +431,7 @@ export default function ServicesPage() {
             </div>
           </TabsContent>
 
-          <TabsContent value="other">
+          <TabsContent value="apostille">
             <div className="grid gap-6 md:gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
               <ServiceCard
                 title="Apostille Services"
