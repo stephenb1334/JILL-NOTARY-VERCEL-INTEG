@@ -1,6 +1,7 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { useSearchParams } from "next/navigation"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
@@ -45,6 +46,8 @@ const formSchema = z.object({
 
 export default function BookingPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const searchParams = useSearchParams()
+  const preselectedService = searchParams.get("service")
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -54,8 +57,15 @@ export default function BookingPage() {
       phone: "",
       location: "",
       notes: "",
+      service: preselectedService || "",
     },
   })
+
+  useEffect(() => {
+    if (preselectedService) {
+      form.setValue("service", preselectedService)
+    }
+  }, [preselectedService, form])
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true)
@@ -156,21 +166,21 @@ export default function BookingPage() {
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel>Service Type</FormLabel>
-                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                        <Select onValueChange={field.onChange} value={field.value}>
                           <FormControl>
                             <SelectTrigger>
                               <SelectValue placeholder="Select a service" />
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
-                            <SelectItem value="real-estate">Real Estate Closing</SelectItem>
-                            <SelectItem value="loan-signing">Loan Signing</SelectItem>
-                            <SelectItem value="power-of-attorney">Power of Attorney</SelectItem>
-                            <SelectItem value="affidavits">Affidavits & Statements</SelectItem>
+                            <SelectItem value="notary">General Notary Services</SelectItem>
+                            <SelectItem value="real-estate">Real Estate Services</SelectItem>
                             <SelectItem value="estate-planning">Estate Planning</SelectItem>
-                            <SelectItem value="other">Other Documents</SelectItem>
                             <SelectItem value="apostille">Apostille Services</SelectItem>
+                            <SelectItem value="vehicle">Vehicle Documentation</SelectItem>
+                            <SelectItem value="business">Business & Employment</SelectItem>
                             <SelectItem value="wedding-officiant">Wedding Officiant Services</SelectItem>
+                            <SelectItem value="other">Other Services</SelectItem>
                           </SelectContent>
                         </Select>
                         <FormMessage />
@@ -189,7 +199,7 @@ export default function BookingPage() {
                             <PopoverTrigger asChild>
                               <FormControl>
                                 <Button
-                                  variant={"outline"}
+                                  variant="outline"
                                   className={cn(
                                     "w-full pl-3 text-left font-normal",
                                     !field.value && "text-muted-foreground",
@@ -274,7 +284,11 @@ export default function BookingPage() {
                     )}
                   />
 
-                  <Button type="submit" className="w-full" disabled={isSubmitting}>
+                  <Button
+                    type="submit"
+                    className="w-full bg-deep-purple text-white border border-black"
+                    disabled={isSubmitting}
+                  >
                     {isSubmitting ? "Submitting..." : "Request Appointment"}
                   </Button>
                 </form>
