@@ -2,7 +2,6 @@ import { Check, Globe, FileText, Clock, DollarSign } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import Image from "next/image"
 
 export function ApostilleServices() {
   return (
@@ -21,26 +20,17 @@ export function ApostilleServices() {
           <div>
             <Card className="border-2 border-deep-purple-200">
               <CardHeader>
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="flex-shrink-0">
-                    <Image
-                      src="/images/apostille2.jpg"
-                      alt="Florida Apostille Services - Florida flag with world map representing international document authentication"
-                      width={90}
-                      height={130}
-                      className="rounded-lg border-2 border-deep-purple-200 bg-white p-2"
-                    />
+                <div className="flex items-center gap-3 mb-2">
+                  {" "}
+                  {/* Adjusted mb */}
+                  <div className="p-3 rounded-full bg-deep-purple-100">
+                    <Globe className="h-6 w-6 text-deep-purple-700" />
                   </div>
-                  <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="p-3 rounded-full bg-deep-purple-100">
-                        <Globe className="h-6 w-6 text-deep-purple-700" />
-                      </div>
-                      <CardTitle className="font-heading text-xl text-deep-purple-800">
-                        Professional Apostille Services
-                      </CardTitle>
-                    </div>
-                    <div className="flex items-center gap-2">
+                  <div>
+                    <CardTitle className="font-heading text-xl text-deep-purple-800">
+                      Professional Apostille Services
+                    </CardTitle>
+                    <div className="flex items-center gap-2 mt-1">
                       <DollarSign className="h-4 w-4 text-steel-blue-600" />
                       <span className="text-lg font-semibold text-steel-blue-700">$250 per Apostille document</span>
                     </div>

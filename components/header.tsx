@@ -37,85 +37,59 @@ export function Header() {
     >
       <div className="container mx-auto px-4 py-3 md:py-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2 flex-shrink-0">
+          <Link href="/" className="flex items-center space-x-2">
             <img
-              src="/images/000-newnewlogotrans.jpg"
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jill-logo-png.PNG-fVdHOEI1YyjHpMDwUKHO2ywRaF0Kps.png"
               alt="NotariesBy Logo"
-              className="h-6 sm:h-7 md:h-8 lg:h-9 w-auto max-w-[120px] sm:max-w-[140px] md:max-w-[160px]"
+              className="h-6 md:h-8 w-auto"
             />
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
-            <nav className="flex items-center space-x-4 xl:space-x-6">
+          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
+            <nav className="flex items-center space-x-4 lg:space-x-6">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-sm font-medium text-neutral-700 hover:text-purple-600 transition-colors whitespace-nowrap"
+                  className="text-sm font-medium text-neutral-700 hover:text-primary transition-colors whitespace-nowrap"
                 >
                   {item.name}
                 </Link>
               ))}
             </nav>
-          </div>
-
-          {/* Book Now Button - Desktop */}
-          <div className="hidden lg:flex items-center">
-            <Button
-              asChild
-              className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-semibold px-6 py-2 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-            >
+            <Button asChild className="bg-deep-purple text-white border border-black whitespace-nowrap">
               <Link href="/schedule">Book Now</Link>
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="lg:hidden flex items-center space-x-3">
-            <Button
-              asChild
-              size="sm"
-              className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-semibold px-4 py-1.5 rounded-full text-xs"
-            >
-              <Link href="/schedule">Book</Link>
-            </Button>
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="p-2 hover:bg-gray-100 rounded-md transition-colors"
-              aria-label="Toggle menu"
-            >
+          <div className="md:hidden flex items-center">
+            <Button variant="ghost" size="icon" onClick={() => setIsOpen(!isOpen)} className="p-2">
               {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </button>
+            </Button>
           </div>
         </div>
       </div>
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="lg:hidden bg-white border-t shadow-lg">
+        <div className="md:hidden bg-white border-t shadow-lg">
           <div className="container mx-auto px-4 py-4">
             <nav className="flex flex-col space-y-3">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-base font-medium py-3 px-2 text-neutral-700 hover:text-purple-600 hover:bg-purple-50 rounded-md transition-colors border-b border-neutral-100 last:border-b-0"
+                  className="text-base font-medium py-2 text-neutral-700 hover:text-primary transition-colors border-b border-neutral-100 last:border-b-0"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-              <div className="pt-3">
-                <Button
-                  asChild
-                  className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-semibold py-3 rounded-full shadow-lg"
-                >
-                  <Link href="/schedule" onClick={() => setIsOpen(false)}>
-                    Book Your Appointment
-                  </Link>
-                </Button>
-              </div>
+              <Button asChild className="mt-4 bg-deep-purple text-white border border-black">
+                <Link href="/schedule" onClick={() => setIsOpen(false)}>
+                  Book Now
+                </Link>
+              </Button>
             </nav>
           </div>
         </div>

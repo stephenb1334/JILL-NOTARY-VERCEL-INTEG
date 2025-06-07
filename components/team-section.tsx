@@ -1,9 +1,7 @@
 "use client"
 
-import Link from "next/link"
-
 import { motion } from "framer-motion"
-import { Phone } from "lucide-react"
+import { Mail, Phone, MapPin } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export function TeamSection() {
@@ -32,17 +30,14 @@ export function TeamSection() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
-            className="bg-white rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100"
-            style={{
-              boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.05)",
-            }}
+            className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
           >
             <div className="p-8">
               <div className="flex flex-col items-center text-center">
                 {/* Image Container */}
                 <div className="w-48 h-48 mb-6 relative">
                   <img
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jill%20headshot.PNG-R3RJpMsPDtNr3rNPhhMvBWlZ6zZkw2.png"
+                    src="/images/jill-headshot.png"
                     alt="Jill Munoz - Principal & Owner"
                     className="w-full h-full object-cover rounded-full border-4 border-deep-purple/20 shadow-lg"
                   />
@@ -61,17 +56,19 @@ export function TeamSection() {
                     reputation for professionalism, reliability, and exceptional service throughout Florida.
                   </p>
 
-                  {/* Call Now Button */}
-                  <div className="flex justify-center pt-4">
+                  {/* Contact Buttons */}
+                  <div className="flex gap-3 justify-center pt-4">
+                    <Button size="sm" className="bg-deep-purple hover:bg-deep-purple/90 text-white">
+                      <Mail className="w-4 h-4 mr-2" />
+                      Contact
+                    </Button>
                     <Button
-                      asChild
-                      size="lg"
-                      className="bg-gradient-to-r from-deep-purple to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-semibold px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                      size="sm"
+                      variant="outline"
+                      className="border-deep-purple text-deep-purple hover:bg-deep-purple/5"
                     >
-                      <a href="tel:+1-813-555-0123" className="flex items-center">
-                        <Phone className="w-5 h-5 mr-2" />
-                        Call Now
-                      </a>
+                      <Phone className="w-4 h-4 mr-2" />
+                      Schedule
                     </Button>
                   </div>
                 </div>
@@ -85,10 +82,7 @@ export function TeamSection() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
             viewport={{ once: true }}
-            className="bg-white rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100"
-            style={{
-              boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.05)",
-            }}
+            className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
           >
             <div className="p-8">
               <div className="flex flex-col items-center text-center">
@@ -114,17 +108,19 @@ export function TeamSection() {
                     making the notarization process seamless and is strongly driven by customer service satisfaction.
                   </p>
 
-                  {/* Call Now Button */}
-                  <div className="flex justify-center pt-4">
+                  {/* Contact Buttons */}
+                  <div className="flex gap-3 justify-center pt-4">
+                    <Button size="sm" className="bg-steel-blue hover:bg-steel-blue/90 text-white">
+                      <Mail className="w-4 h-4 mr-2" />
+                      Contact
+                    </Button>
                     <Button
-                      asChild
-                      size="lg"
-                      className="bg-gradient-to-r from-steel-blue to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                      size="sm"
+                      variant="outline"
+                      className="border-steel-blue text-steel-blue hover:bg-steel-blue/5"
                     >
-                      <a href="tel:+1-813-555-0123" className="flex items-center">
-                        <Phone className="w-5 h-5 mr-2" />
-                        Call Now
-                      </a>
+                      <Phone className="w-4 h-4 mr-2" />
+                      Schedule
                     </Button>
                   </div>
                 </div>
@@ -143,27 +139,15 @@ export function TeamSection() {
         >
           <div className="bg-deep-purple/5 rounded-2xl p-8 max-w-3xl mx-auto">
             <h3 className="text-2xl font-bold text-deep-purple mb-4">Ready to Work with Our Team?</h3>
-            <p className="text-gray-600 mb-6">
-              Contact our professional notary specialists today for immediate assistance
-            </p>
+            <p className="text-gray-600 mb-6">Schedule an appointment with our professional notary specialists today</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                asChild
-                size="lg"
-                className="bg-gradient-to-r from-deep-purple to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-semibold px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                <a href="tel:+1-813-555-0123" className="flex items-center justify-center">
-                  <Phone className="w-5 h-5 mr-2" />
-                  Call Our Team
-                </a>
+              <Button size="lg" className="bg-deep-purple hover:bg-deep-purple/90">
+                <MapPin className="w-4 h-4 mr-2" />
+                Book Appointment
               </Button>
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="border-2 border-deep-purple text-deep-purple hover:bg-deep-purple hover:text-white font-semibold px-8 py-3 rounded-full transition-all duration-300"
-              >
-                <Link href="/schedule">Schedule Online</Link>
+              <Button size="lg" variant="outline" className="border-deep-purple text-deep-purple">
+                <Phone className="w-4 h-4 mr-2" />
+                Call Us Now
               </Button>
             </div>
           </div>
