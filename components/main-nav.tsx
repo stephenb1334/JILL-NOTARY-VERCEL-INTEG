@@ -73,10 +73,7 @@ export function MainNav() {
                 >
                   Client Resources
                 </Link>
-                <Button
-                  asChild
-                  className="mt-2 w-full bg-deep-purple hover:bg-purple-700 text-white border border-black"
-                >
+                <Button asChild className="mt-2 w-full bg-coastal-blue hover:bg-blue-700 !text-black">
                   <Link href="/schedule">Book Now</Link>
                 </Button>
               </div>
@@ -120,7 +117,7 @@ export function MainNav() {
             >
               Client Resources
             </Link>
-            <Button asChild size="sm" className="bg-deep-purple hover:bg-purple-700 text-white border border-black">
+            <Button asChild size="sm" className="bg-coastal-blue hover:bg-blue-700 !text-black">
               <Link href="/schedule">Book Now</Link>
             </Button>
           </nav>

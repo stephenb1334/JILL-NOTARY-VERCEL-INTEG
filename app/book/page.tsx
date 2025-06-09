@@ -99,9 +99,9 @@ export default function BookingPage() {
   return (
     <div className="container px-4 py-12 md:py-16">
       <div className="text-center space-y-4 mb-12">
-        <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Book an Appointment</h1>
+        <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-black">Book an Appointment</h1>
         <p className="text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed max-w-[700px] mx-auto">
-          Schedule a convenient time for our mobile notary to meet you in St. Petersburg.
+          Schedule a convenient time for our mobile notary to meet you.
         </p>
       </div>
 
@@ -109,7 +109,7 @@ export default function BookingPage() {
         <div className="md:col-span-2">
           <Card>
             <CardHeader>
-              <CardTitle>Request an Appointment</CardTitle>
+              <CardTitle className="text-blue-800">Request an Appointment</CardTitle>
               <CardDescription>
                 Fill out the form below and we'll contact you to confirm your appointment.
               </CardDescription>
@@ -166,7 +166,7 @@ export default function BookingPage() {
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel>Service Type</FormLabel>
-                        <Select onValueChange={field.onChange} value={field.value}>
+                        <Select onValueChange={field.onChange} value={field.value} defaultValue={field.value}>
                           <FormControl>
                             <SelectTrigger>
                               <SelectValue placeholder="Select a service" />
@@ -174,12 +174,12 @@ export default function BookingPage() {
                           </FormControl>
                           <SelectContent>
                             <SelectItem value="notary">General Notary Services</SelectItem>
-                            <SelectItem value="real-estate">Real Estate Services</SelectItem>
-                            <SelectItem value="estate-planning">Estate Planning</SelectItem>
+                            <SelectItem value="real-estate">Real Estate Loan Signing</SelectItem>
+                            <SelectItem value="estate-planning">Estate Planning Documents</SelectItem>
                             <SelectItem value="apostille">Apostille Services</SelectItem>
+                            <SelectItem value="wedding-officiant">Wedding Officiant Services</SelectItem>
                             <SelectItem value="vehicle">Vehicle Documentation</SelectItem>
                             <SelectItem value="business">Business & Employment</SelectItem>
-                            <SelectItem value="wedding-officiant">Wedding Officiant Services</SelectItem>
                             <SelectItem value="other">Other Services</SelectItem>
                           </SelectContent>
                         </Select>
@@ -286,7 +286,7 @@ export default function BookingPage() {
 
                   <Button
                     type="submit"
-                    className="w-full bg-deep-purple text-white border border-black"
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? "Submitting..." : "Request Appointment"}
@@ -300,43 +300,24 @@ export default function BookingPage() {
         <div>
           <Card>
             <CardHeader>
-              <CardTitle>Contact Information</CardTitle>
+              <CardTitle className="text-blue-800">Contact Information</CardTitle>
               <CardDescription>Need immediate assistance? Contact us directly.</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-center gap-3">
-                <Phone className="h-5 w-5 text-deep-purple-600" />
+                <Phone className="h-5 w-5 text-blue-600" />
                 <div>
                   <p className="font-medium">(727) 555-1234</p>
                   <p className="text-sm text-gray-500">Available 9AM-7PM, Mon-Sat</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <Mail className="h-5 w-5 text-deep-purple-600" />
+                <Mail className="h-5 w-5 text-blue-600" />
                 <div>
                   <p className="font-medium">info@spnotary.com</p>
                   <p className="text-sm text-gray-500">We'll respond within 24 hours</p>
                 </div>
               </div>
-            </CardContent>
-          </Card>
-
-          <Card className="mt-6">
-            <CardHeader>
-              <CardTitle>Our Service Area</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="aspect-video bg-muted rounded-md flex items-center justify-center">
-                <img
-                  src="/placeholder.svg?height=300&width=400"
-                  alt="St. Petersburg service area map"
-                  className="rounded-md"
-                />
-              </div>
-              <p className="mt-4 text-sm text-gray-500">
-                We serve St. Petersburg and surrounding areas in Pinellas County, including Clearwater, Largo, Pinellas
-                Park, and more.
-              </p>
             </CardContent>
           </Card>
         </div>

@@ -16,18 +16,20 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <CredibilitySection />
       <section className="py-4 bg-white">
         <div>
           <SmoothCarousel direction="rtl" speed={80} />
         </div>
       </section>
-      <TestimonialsSection />
+      <CredibilitySection />
       <ServicesSection />
+      <TestimonialsSection />
       <ApostilleServices />
+      <TestimonialsSection />
       <WeddingOfficiantServices />
-      <CertificationsSection />
+      <TestimonialsSection />
       <ScheduleSection />
+      <CertificationsSection />
       <FounderSection />
       <CredentialsSection />
       <FaqSection />
