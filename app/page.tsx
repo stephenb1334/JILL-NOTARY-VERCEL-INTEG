@@ -23,9 +23,7 @@ export default function HomePage() {
       </section>
       <CredibilitySection />
       <ServicesSection />
-      <TestimonialsSection />
       <ApostilleServices />
-      <TestimonialsSection />
       <WeddingOfficiantServices />
       <TestimonialsSection />
       <ScheduleSection />
