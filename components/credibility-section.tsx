@@ -5,28 +5,24 @@ import { motion } from "framer-motion"
 export function CredibilitySection() {
   const certifications = [
     {
-      name: "NNA Certified Signing Agent",
-      image:
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/NNA%20LOGO.PNG-w9iuyQdknc119MnXO8CIgNJ2biYiuC.png",
-      alt: "NNA Certified Notary Signing Agent",
+      name: "LSS Association",
+      image: "/images/certification-1.png",
+      alt: "LSS Association Certified",
     },
     {
-      name: "NNA Background Screened",
-      image:
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/LOGO%20NNA.JPEG-UdfCfFbyy1pQGtglsrT8Aqb1hmqQKJ.jpeg",
-      alt: "NNA Background Screened Certified",
+      name: "NNA Certified",
+      image: "/images/certification-2.png",
+      alt: "National Notary Association Certified",
+    },
+    {
+      name: "Professional Certification",
+      image: "/images/certification-3.png",
+      alt: "Professional Industry Certification",
     },
     {
       name: "Loan Signing System",
-      image:
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/LLS%20Logo-APPROVED%20.JPEG-z0ywWaImzcXIyOPBZgDcnXaTPT9C06.jpeg",
+      image: "/images/certification-4.png",
       alt: "Loan Signing System Certified",
-    },
-    {
-      name: "National Notary Association",
-      image:
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/nna%20diamond.JPEG-Muya81Nitu1USn4xcCEnAbDqosSwxp.jpeg",
-      alt: "National Notary Association Member",
     },
   ]
 
@@ -40,7 +36,7 @@ export function CredibilitySection() {
           viewport={{ once: true }}
           className="text-center mb-8"
         >
-          <h2 className="text-2xl md:text-3xl font-bold font-heading text-primary mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold font-heading text-black mb-4">
             Certified & Trusted Professional
           </h2>
           <p className="text-neutral-600 max-w-2xl mx-auto">
@@ -58,14 +54,13 @@ export function CredibilitySection() {
               viewport={{ once: true }}
               className="flex flex-col items-center"
             >
-              <div className="w-20 h-20 md:w-24 md:h-24 flex items-center justify-center">
+              <div className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center bg-white rounded-full shadow-sm border border-gray-100 p-2">
                 <img
                   src={cert.image || "/placeholder.svg"}
                   alt={cert.alt}
                   className="max-w-full max-h-full object-contain"
                 />
               </div>
-              <p className="text-xs md:text-sm text-center text-neutral-600 mt-2 font-medium">{cert.name}</p>
             </motion.div>
           ))}
         </div>
