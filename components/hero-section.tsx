@@ -11,8 +11,8 @@ export function HeroSection() {
       <div className="absolute inset-0 w-full h-full">
         <div className="relative w-full h-full">
           <Image
-            src="/images/hero-background.jpg"
-            alt="Hero background"
+            src="/images/hero-background-new.png"
+            alt="Professional real estate notary services background"
             fill
             priority
             sizes="100vw"

@@ -19,7 +19,7 @@ export function MainNav() {
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-2">
           <Link href="/" className="font-accent font-bold text-xl flex items-center">
-            <img src="/images/notariesby-logo.png" alt="NotariesBy Logo" className="h-8 w-auto" />
+            <img src="/images/notariesby-logo-new.png" alt="NotariesBy Logo" className="h-8 w-auto" />
           </Link>
         </div>
 
