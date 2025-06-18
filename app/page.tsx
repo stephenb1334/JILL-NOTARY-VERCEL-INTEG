@@ -1,6 +1,5 @@
 import { HeroSection } from "@/components/hero-section"
 import { SmoothCarousel } from "@/components/smooth-carousel"
-import { CredibilitySection } from "@/components/credibility-section"
 import { ServicesSection } from "@/components/services-section"
 import { ApostilleServices } from "@/components/apostille-services"
 import { WeddingOfficiantServices } from "@/components/wedding-officiant-services"
@@ -11,6 +10,7 @@ import { FounderSection } from "@/components/founder-section"
 import { CredentialsSection } from "@/components/credentials-section"
 import { FaqSection } from "@/components/faq-section"
 import { ContactSection } from "@/components/contact-section"
+import { CredibilitySection } from "@/components/credibility-section"
 
 export default function HomePage() {
   return (
@@ -21,7 +21,6 @@ export default function HomePage() {
           <SmoothCarousel direction="rtl" speed={80} />
         </div>
       </section>
-      <CredibilitySection />
       <ServicesSection />
       <ApostilleServices />
       <WeddingOfficiantServices />
@@ -32,6 +31,7 @@ export default function HomePage() {
       <CredentialsSection />
       <FaqSection />
       <ContactSection />
+      <CredibilitySection />
     </>
   )
 }

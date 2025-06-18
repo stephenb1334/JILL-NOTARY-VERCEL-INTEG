@@ -52,8 +52,10 @@ export function ImageCarousel({ direction = "rtl", speed = 20 }: ImageCarouselPr
         style={{ width: "fit-content" }}
       >
         {duplicatedImages.map((image, index) => (
-          <div key={index} className="flex-shrink-0 w-40 h-40 md:w-48 md:h-48 p-0.5">
+          <div key={index} className="flex-shrink-0 w-40 h-40 md:w-48 md:h-48 p-0.5 relative">
             <img src={image.src || "/placeholder.svg"} alt={image.alt} className="w-full h-full object-cover" />
+            {/* Gray and white overlay */}
+            <div className="absolute inset-0 bg-gradient-to-br from-gray-200/40 to-white/30 pointer-events-none"></div>
           </div>
         ))}
       </motion.div>
