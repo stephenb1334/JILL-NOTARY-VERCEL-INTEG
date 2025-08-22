@@ -31,18 +31,14 @@ export function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 transition-all duration-300",
-        scrolled ? "shadow-sm" : "",
+        "sticky top-0 z-50 w-full transition-all duration-300",
+        scrolled ? "bg-white shadow-md" : "bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60",
       )}
     >
       <div className="container mx-auto px-4 py-3 md:py-4">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center space-x-2">
-            <img
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jill-logo-png.PNG-fVdHOEI1YyjHpMDwUKHO2ywRaF0Kps.png"
-              alt="NotariesBy Logo"
-              className="h-6 md:h-8 w-auto"
-            />
+            <img src="/images/logo2.jpg" alt="Notaries By Logo" className="h-8 md:h-10 w-auto" />
           </Link>
 
           <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
@@ -57,7 +53,10 @@ export function Header() {
                 </Link>
               ))}
             </nav>
-            <Button asChild className="bg-deep-purple text-white border border-black whitespace-nowrap">
+            <Button
+              asChild
+              className="bg-deep-purple text-black border border-black whitespace-nowrap hover:bg-purple-700 hover:text-white"
+            >
               <Link href="/schedule">Book Now</Link>
             </Button>
           </div>
@@ -85,7 +84,10 @@ export function Header() {
                   {item.name}
                 </Link>
               ))}
-              <Button asChild className="mt-4 bg-deep-purple text-white border border-black">
+              <Button
+                asChild
+                className="mt-4 bg-deep-purple text-black border border-black hover:bg-purple-700 hover:text-white"
+              >
                 <Link href="/schedule" onClick={() => setIsOpen(false)}>
                   Book Now
                 </Link>

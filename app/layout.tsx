@@ -19,7 +19,10 @@ const mulish = Mulish({
 export const metadata: Metadata = {
   title: "NotariesBy | Professional Mobile Notary Services",
   description: "Expert mobile notary services specializing in loan signings and estate planning throughout Florida.",
-    generator: 'v0.dev'
+  generator: "v0.dev",
+  icons: {
+    icon: "/favicon.jpg",
+  },
 }
 
 export default function RootLayout({

@@ -61,7 +61,7 @@ export function AnimatedNav() {
       animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 100 }}
       className={`fixed top-0 left-0 right-0 z-50 ${
-        scrolled ? "bg-white/90 backdrop-blur-md shadow-md" : "bg-transparent"
+        scrolled ? "bg-white shadow-md" : "bg-transparent"
       } transition-all duration-300`}
     >
       <div className="container mx-auto px-4 py-4">
@@ -74,8 +74,8 @@ export function AnimatedNav() {
           >
             <Link href="/" className="font-accent font-bold text-xl flex items-center">
               <motion.img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jill-logo-png.PNG-fVdHOEI1YyjHpMDwUKHO2ywRaF0Kps.png"
-                alt="NotariesBy Logo"
+                src="/images/logo2.jpg"
+                alt="Notaries By Logo"
                 className="h-8 w-auto"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -130,7 +130,7 @@ export function AnimatedNav() {
                       >
                         <Button
                           asChild
-                          className="w-full mt-2 bg-deep-purple hover:bg-purple-700 text-white border border-black"
+                          className="w-full mt-2 bg-deep-purple text-black border border-black hover:bg-purple-700 hover:text-white"
                         >
                           <Link href="/schedule">Book Now</Link>
                         </Button>
@@ -154,7 +154,7 @@ export function AnimatedNav() {
                 <Button
                   asChild
                   size="sm"
-                  className="bg-deep-purple hover:bg-purple-700 text-white border border-black"
+                  className="bg-deep-purple text-black border border-black hover:bg-purple-700 hover:text-white"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
